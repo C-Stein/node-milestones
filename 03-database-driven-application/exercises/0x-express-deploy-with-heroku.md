@@ -17,7 +17,7 @@ $ git add  | git commit | git push heroku master
 ```
 
 ### Preparing your app for deployment
-Update your package.json to include a "start" and "postinstall" inn your scripts.
+Update your package.json to include a "start" and "postinstall" in your scripts.
 ```
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -37,14 +37,15 @@ You may also want to double check that your "main" is correct. i.e.
 ```
 and make sure that all of your dependencies have been saved and appear on your package.json.
 
-
-###
+### Deploying to Heroku
+```
+git push origin heroku
+```
 
 ## Topics Covered
 
 -   Signing up for Heroku
--   Preparing your app for deployment
--   
+-   Preparing your app for deployment  
 
 ## Requirements
 
@@ -55,8 +56,4 @@ nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 ## Additional Reading
 
 -   [Heroku](https://heroku.com/home)
--   [Ipsum](https://ipsum.com/)
--   [Dolor](https://dolor.com/)
--   [Sit](https://sit.com/)
--   [Amet](https://amet.com/)
 
