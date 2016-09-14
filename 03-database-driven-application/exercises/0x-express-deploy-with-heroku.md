@@ -49,9 +49,7 @@ git push origin heroku
 
 ## Requirements
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Deploy an app and make sure that you include the web address inyou rgithub repo for that project.
 
 ## Additional Reading
 
