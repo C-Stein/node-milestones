@@ -12,7 +12,7 @@ Create an account [here](https://signup.heroku.com/login)
 $ brew update
 $ brew install heroku
 $ heroku login
-$ heroku create
+$ heroku create [optional: project name]
 $ git add  | git commit | git push heroku master
 ```
 
@@ -46,10 +46,11 @@ git push origin heroku
 
 -   Signing up for Heroku
 -   Preparing your app for deployment  
+-   Deploying to Heroku
 
 ## Requirements
 
-Deploy an app and make sure that you include the web address inyou rgithub repo for that project.
+Deploy an app and make sure that you include the web address in your github repo for that project.
 
 ## Additional Reading
 
