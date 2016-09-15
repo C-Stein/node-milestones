@@ -55,4 +55,5 @@ Deploy an app and make sure that you include the web address in your github repo
 ## Additional Reading
 
 -   [Heroku](https://heroku.com/home)
+-   [TeamTreehouse](https://teamtreehouse.com/library/deploy-a-node-application-to-heroku)
 
