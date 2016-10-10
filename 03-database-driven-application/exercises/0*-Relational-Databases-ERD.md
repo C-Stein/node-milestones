@@ -53,7 +53,7 @@ Let's walk through it.
     * https://www.draw.io/
     * http://asciiflow.com/
 
-[Result](http://lh4.ggpht.com/_oKo6zFhdD98/SWFPtyfHJFI/AAAAAAAAAMc/GdrlzeBNsZM/s800/ChinookDatabaseSchema1.1.png)
+6. [Result](http://lh4.ggpht.com/_oKo6zFhdD98/SWFPtyfHJFI/AAAAAAAAAMc/GdrlzeBNsZM/s800/ChinookDatabaseSchema1.1.png)
 
 
 ## Requirements
