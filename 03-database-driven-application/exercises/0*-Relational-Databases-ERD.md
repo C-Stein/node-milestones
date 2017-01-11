@@ -40,20 +40,20 @@
 #### Wait. What's an ERD?
 An *Entity-Relationship Diagram* is a visual mapping of the relationships between tables in a database.
 
-Let's walk through it.
-1. Install the [Chinook Database](https://chinookdatabase.codeplex.com/) and unzip. Save in a location you are going to remember in about 2 minutes.
-2. Install our Database Browser - there are tons out there, but let's use [DB Browser for SQLite](http://sqlitebrowser.org/)
-3. Open then Database Browser and click 'open database' - select the file from the Chinook Database labeled `Chinook_Sqlite.sqlite`.
-4. Glimpse through the tables and see if you can get a sense of how on earth they are related.
-5. Let's use one of these tools to create an ERD and see if we can't get a better sense of how these tables are related.
-    * https://wcs.smartdraw.com/entity-relationship-diagram/img/information-engineering-style.jpg
-    * https://github.com/ondras/wwwsqldesigner
-    * http://ondras.zarovi.cz/sql/demo/
-    * https://www.gliffy.com/
-    * https://www.draw.io/
-    * http://asciiflow.com/
+Let's walk through it.  
+1. Install the [Chinook Database](https://chinookdatabase.codeplex.com/) and unzip. Save in a location you are going to remember in about 2 minutes.  
+2. Install our Database Browser - there are tons out there, but let's use [DB Browser for SQLite](http://sqlitebrowser.org/)  
+3. Open then Database Browser and click 'open database' - select the file from the Chinook Database labeled `Chinook_Sqlite.sqlite`.  
+4. Glimpse through the tables and see if you can get a sense of how on earth they are related.  
+5. Let's use one of these tools to create an ERD and see if we can't get a better sense of how these tables are related:  
+     * https://wcs.smartdraw.com/entity-relationship-diagram/img/information-engineering-style.jpg  
+     * https://github.com/ondras/wwwsqldesigner  
+     * http://ondras.zarovi.cz/sql/demo/  
+     * https://www.gliffy.com/  
+     * https://www.draw.io/  
+     * http://asciiflow.com/  
 
-6. [Result](http://lh4.ggpht.com/_oKo6zFhdD98/SWFPtyfHJFI/AAAAAAAAAMc/GdrlzeBNsZM/s800/ChinookDatabaseSchema1.1.png)
+[Result](http://lh4.ggpht.com/_oKo6zFhdD98/SWFPtyfHJFI/AAAAAAAAAMc/GdrlzeBNsZM/s800/ChinookDatabaseSchema1.1.png)  
 
 
 ## Requirements
