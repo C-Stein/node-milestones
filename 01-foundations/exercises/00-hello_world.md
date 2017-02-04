@@ -55,25 +55,20 @@ Adding the operation `console.log('This is a log message')` will output
 an invisible [Newline](https://en.wikipedia.org/wiki/Newline) character `\n`
 for any additional commands that may follow.
 
-## Topics Covered
-
--   Node.js environment
--   Command Line applications
--   Global `console` object
 
 ## Requirements
 
 For this exercise you will create a
 [Hello World program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program).
 
-Create a JavaScript file to act as a Node.js program named `01.js`. The file
+Create a JavaScript file to act as a Node.js program named `hello-world.js`. The file
 should contain JavaScript code to output the phrase "Hello, World!" to the
 terminal through the stdout stream.
 
 Expected:
 
 ```bash
-$ node 01.js
+$ node hello-world.js
 Hello, World!
 ```
 

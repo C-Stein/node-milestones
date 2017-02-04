@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In the last exercise, we created a program that could execute in the Node.js
+In the `hello-world` exercise, we created a program that could execute in the Node.js
 environment. By typing `node` followed by the filename, the filename is used as
 an argument to the `node` program. `node` recognizes this parameter and then
 retrieves the contents of the file and executes it line-by-line in the Node.js
@@ -177,15 +177,14 @@ For this exercise you will create another Hello World program. However, unlike
 the last exercise, this program must be able to be executed directly by the
 operating system.
 
-Create a JavaScript file to act as a Node.js program named `02.js`. The file
-should contain JavaScript code to output the phrase "Hello, World!" to the
-terminal through the stdout stream.
+Create a JavaScript file to act as a Node.js program named `direct-exec.js`. The file
+should contain JavaScript code to output the phrase "Hello, World. I was executed without the 'node' command!" to the terminal through the stdout stream.  
 
 Expected:
 
 ```bash
-$ ./02.js
-Hello, World!
+$ ./direct-exec.js
+Hello, World. I was executed without the 'node' command!
 ```
 
 ## Additional Reading
