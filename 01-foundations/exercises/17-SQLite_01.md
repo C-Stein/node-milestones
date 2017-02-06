@@ -22,7 +22,7 @@ const { Database } = require('sqlite3').verbose();
 
 // Returns a new database object and automatically opens the database
 // Database method accepts a callback function for successful connection
-const db = new Database(':memory:', () => console.log('Database open!'));
+const db = new Database(':memory:', () => console.log('Connected!'));
 ```
 
 #### Creating a database in memory vs. as a file
@@ -41,6 +41,20 @@ const db = new Database('db/example.sqlite');
 
 
 #### Creating a table
+
+Now lets create a table with some columns. First we will use `db.run()` to execute a SQLite statement to create a table.
+
+```js
+db.run("CREATE TABLE employees (id INT, first TEXT, last TEXT)");
+```
+
+The above statement will do the following:
+1. Create a table named `employees`
+2. Create three columns named `id`, `first`, and `last`
+3. Specify the data-type of the value for each column. Even if there is a specified data-type, a value of any data-type can still be stored in the column.
+  - Constraints can be passed in to restrict certain data-types
+  - eg: `first TEXT NOT NULL` will accept any value not equal to null
+
 
 
 
