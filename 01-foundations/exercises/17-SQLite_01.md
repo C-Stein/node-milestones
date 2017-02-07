@@ -18,7 +18,7 @@ sqlite3 is an npm module that provides a software interface with a SQLite databa
 
 ```js
 // Require in the Database method from the sqlite3 module
-// We will be using the verbose execution mode, which will give us better error messages.
+// We will be using the verbose execution mode, which will help with debugging errors.
 const { Database } = require('sqlite3').verbose();
 
 // Returns a new database object and automatically opens the database
@@ -26,7 +26,7 @@ const { Database } = require('sqlite3').verbose();
 const db = new Database(':memory:', () => console.log('Connected!'));
 ```
 
-#### Creating a database in memory vs. as a file
+### Creating a database in memory vs. as a file
 
 The below lines of code are both creating and opening a database, but how the database will be saved is the difference.
 
@@ -40,15 +40,13 @@ const db = new Database(':memory:');
 const db = new Database('db/example.sqlite');
 ```
 
-#### Creating a Table
+### Creating a Table
 
-Now lets create a table with some columns. First we will use `db.run()` to execute a SQLite statement to create a table.
+Now lets create a table with some columns. We will use `db.run()` to execute a SQL statement.
 
 ```js
-db.run("CREATE TABLE employees (id INT, first TEXT, last TEXT)");
-
 // Passing in IF NOT EXISTS after CREATE TABLE will check to make sure there are no tables named 'employees'
-// If so, this line will not run
+// If it does exist, this line will not run
 db.run("CREATE TABLE IF NOT EXISTS employees (id INT, first TEXT, last TEXT)");
 ```
 
@@ -61,7 +59,7 @@ The above statement will do the following:
   - eg: `first TEXT NOT NULL` will accept any value not equal to null
 
 
-#### Simple Insert Statement
+### Simple Insert Statement
 
 Lets insert out first records into the `employees` table.
 
@@ -78,12 +76,12 @@ db.run("INSERT INTO employees VALUES (2, 'Jim', 'Halpert')");
 //  2 | 'Jim'     | 'Halpert'
 ```
 
-The above statements may look different, but they will both insert a record with `id`, `first`, and `last` values into the table. Omitting the `(id, first, last)` from the first statement will not change the outcome, but make sure that the values (eg: `(0, 'Michael', 'Scott')`) are in the **same order as they were defined when the table was created.**
+The above statements may use different syntax, but they will both insert a record with `id`, `first`, and `last` values into the table. Omitting the `(id, first, last)` from the first statement will not change the outcome, but make sure that the values (eg: `(0, 'Michael', 'Scott')`) are in the **same order as they were defined when the table was created.**
 
 
-#### Dynamic Inserts with JavaScript
+### Dynamic Inserts with JavaScript
 
-First lets create an array of object. Each object will hold information on an employee.
+First lets create an array of objects. Each object will hold information about an employee.
 
 ```js
 const employeeArray = [
@@ -111,27 +109,33 @@ employeeArray.forEach((obj) => {
 ```
 
 
-#### Querying the Database
+### Querying the Database
 
-Now that the table we created has record, lets retrieve the data and view it. We can use `db.all()` to do this. There are other ways to retrieve data, check the [sqlite3 API docs](https://github.com/mapbox/node-sqlite3/wiki/API) for more information.
+Now that the table we created has records, let's retrieve the data and view it. We can use `db.all()` to do this. There are other ways to retrieve data, check out the [sqlite3 API docs](https://github.com/mapbox/node-sqlite3/wiki/API) for more information.
 
 ```js
 // db.all() first runs the query
-// then calls a callback function and passes all resulting rows
+// then calls a callback function which it passes all resulting rows
 db.all("SELECT * FROM employees", (err, allRows) => {
   // allRows is an array containing each row from the query
   allRows.forEach(each => {
     console.log(each.id, each.first + ' ' + each.last);
   });
 });
+// OUTPUT =>
+// 1, 'Michael Scott'
+// 2, 'Jim Halpert'
+// 3, 'Dwight Schrute'
+// 4, 'Andy Bernard'
+// 5, 'Pam Beesly'
 ```
 
 
-#### Error Handling
+### Error Handling
 
 Each of the database methods can receive an optional callback function, and this is where we can check for errors. Uncaught errors will be logged to the console, but so will the entire stack trace, which can be difficult to read.
 
-We can create a custom function which can console log our custom errors.
+We can create a custom function which can console log custom errors.
 
 ```js
 // errorHandler is a function which accepts an error object
@@ -142,10 +146,10 @@ const errorHandler = (err) => {
 };
 ```
 
-Now we can pass our error handler function into our database statements to check for errors.
+Now we can pass our `errorHandler` function into the database methods as a callback to check for errors.
 
 ```js
-// If an error is thrown when this statement is run, our function
+// If an error is thrown when this statement is ran, our function
 // will log it to the console
 db.run("INSERT INTO employees VALUES (2, 'Jim', 'Halpert')", errorHandler);
 
@@ -158,9 +162,9 @@ db.all("SELECT * FROM employees", (err, allRows) => {
 ```
 
 
-#### Closing the Database
+### Closing the Database
 
-Once all statements have been ran, the database connection should be closed. We can do that with `db.close()`. Errors can also be listened for as well as a successful close event with a callback function.
+Once all statements have been executed, the database connection should be closed. We can do that with `db.close()`. Errors can also be listened for as well as a successful close event with a callback function.
 
 ```js
 db.close(err => {
@@ -168,8 +172,8 @@ db.close(err => {
   console.log('Database closed'); // Will only log on successful close
 })
 ```
-
-#### Additional Resources
+_____
+### Additional Resources
 
 ###### [SQLite Website](https://www.sqlite.org/)
 ######  [SQLite Tutorial | Language Reference](https://www.tutorialspoint.com/sqlite/index.htm)
