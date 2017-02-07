@@ -84,7 +84,7 @@ While having a file with the proper shebang is needed for the interpreter, many
 times the operating system won't look in the current directory for executable
 files.
 
-Given a file `executable`, if you attempt to execute it you will git a command
+Given a file `executable`, if you attempt to execute it you will get a command
 not found error:
 
 ```bash
@@ -163,14 +163,6 @@ $ ls -l
 $ ./executablefile
 ```
 
-## Topics Covered
-
--   Command-line applications
--   Compilers and Interpreters
--   Shebang
--   `./`
--   File permissions
-
 ## Requirements
 
 For this exercise you will create another Hello World program. However, unlike
@@ -186,25 +178,3 @@ Expected:
 $ ./direct-exec.js
 Hello, World. I was executed without the 'node' command!
 ```
-
-## Additional Reading
-
--   [`pwd`](https://en.wikipedia.org/wiki/Pwd)
--   [`cal`](https://en.wikipedia.org/wiki/Cal_(Unix))
--   [`vi`](https://en.wikipedia.org/wiki/Vi)
--   [`ls`](https://en.wikipedia.org/wiki/Ls)
--   [`chmod`](https://en.wikipedia.org/wiki/Chmod)
--   [Compiler](https://en.wikipedia.org/wiki/Compiler)
--   [Compiled language](https://en.wikipedia.org/wiki/Compiled_language)
--   [Binary file](https://en.wikipedia.org/wiki/Binary_file)
--   [Interpreter](https://en.wikipedia.org/wiki/Interpreter_(computing))
--   [Interpreted language](https://en.wikipedia.org/wiki/Interpreted_language)
--   [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
--   [http-server](https://github.com/indexzero/http-server)
--   [PATH variable](https://en.wikipedia.org/wiki/PATH_(variable))
--   [dot-slash (`./`)](http://www.linfo.org/dot_slash.html)
--   [dot file](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory)
--   [symlink](https://en.wikipedia.org/wiki/Symbolic_link)
--   [File systems](https://en.wikipedia.org/wiki/File_system)
--   [File system permissions](https://en.wikipedia.org/wiki/File_system_permissions)
--   [Some file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems)
