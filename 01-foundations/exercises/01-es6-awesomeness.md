@@ -5,7 +5,7 @@ You were introduced to some of the latest JS syntax, defined in the ECMAScript s
 Let's review some of the features you are familiar with, as well as some that may be new to you.  
 
 <!-- TODO: Add details about -->
-Way back in the olden days of 2014, we had but one measly way to identify and hold a value in JavaScript: the `var` keyword. Whatever the data type orlexical scope, whether the value was fleeting or permanent, var was your single option. With the latest ECMAScript spec, we now have three ways to define variables, with the introduction of `let` and `const` 
+Way back in the olden days of 2014, we had but one measly way to identify and hold a value in JavaScript: the `var` keyword. Whatever the data type or scope, whether the value was fleeting or permanent, var was your single option. With the latest ECMAScript spec, we now have three ways to define variables, with the introduction of `let` and `const` 
 
 ### [const](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)   
 #### What MDN says 
