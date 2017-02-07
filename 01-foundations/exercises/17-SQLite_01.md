@@ -45,6 +45,10 @@ Now lets create a table with some columns. First we will use `db.run()` to execu
 
 ```js
 db.run("CREATE TABLE employees (id INT, first TEXT, last TEXT)");
+
+// Passing in IF NOT EXISTS after CREATE TABLE will check to make sure there are no tables named 'employees'
+// If so, this line will not run
+db.run("CREATE TABLE IF NOT EXISTS employees (id INT, first TEXT, last TEXT)");
 ```
 
 The above statement will do the following:
@@ -61,22 +65,35 @@ Lets insert out first records into the `employees` table.
 
 ```js
 db.run("INSERT INTO employees (id, first, last) VALUES (0, 'Michael', 'Scott')");
-// OUTPUT => { id: 0, first: 'Michael', last: 'Scott' }
+// OUTPUT => { id: 1, first: 'Michael', last: 'Scott' }
 
 db.run("INSERT INTO employees VALUES (1, 'Jim', 'Halpert')");
-// OUTPUT => { id: 1, first: 'Jim', last: 'Halpert' }
+// OUTPUT => { id: 2, first: 'Jim', last: 'Halpert' }
 ```
 
 The above statements may look different, but they will both insert a record with `id`, `first`, and `last` values into the table. Omitting the `(id, first, last)` from the first statement will not change the outcome, but make sure that the values (eg: `(0, 'Michael', 'Scott')`) which are passed in are in the **same order as they were defined when the table was created.**
 
 Example:
-```
-"CREATE TABLE employees (id INT, first TEXT, last TEXT)"
+```sqlite
+CREATE TABLE employees (id INT, first TEXT, last TEXT)
 
-Correct: "INSERT INTO employees VALUES (2, 'Pam', 'Beesly')"
+Correct: INSERT INTO employees VALUES (2, 'Pam', 'Beesly')
 
-Incorrect: "INSERT INTO employees VALUES ('Beesly', 2, 'Pam')"
+Incorrect: INSERT INTO employees VALUES ('Beesly', 2, 'Pam')
 ```
+
+#### Dynamic Insert with JavaScript
+
+First lets create an array of employees.
+
+```js
+let employeeArray = [
+  { id: 3, firstName: 'Dwight', lastName: 'Schrute' },
+  { id: 4, firstName: 'Andy', lastName: 'Bernard' },
+  { id: 5, firstName: 'Holly', lastName: 'Flax' }
+];
+```
+
 
 
 
