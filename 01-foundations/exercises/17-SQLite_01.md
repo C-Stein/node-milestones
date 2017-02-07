@@ -3,9 +3,12 @@
 SQLite is a software library that implements a self-contained, serverless, zero- configuration, transactional SQL database engine.
 
 What does that mean?
+
 1. SQLite does not require a separate server process or system to operate.
-2. Creating a SQLite database instance is as easy as opening a file.
-3. The entire database instance exists in a single cross-platform file.
+
+1. Creating a SQLite database instance is as easy as opening a file.
+
+1. The entire database instance exists in a single cross-platform file.
 
 
 ## SQLite3
@@ -52,9 +55,12 @@ db.run("CREATE TABLE IF NOT EXISTS employees (id INT, first TEXT, last TEXT)");
 ```
 
 The above statement will do the following:
+
 1. Create a table named `employees`
-2. Create three columns named `id`, `first`, and `last`
-3. Specify the data-type of the value for each column. Even if there is a specified data-type, a value of any data-type can still be stored in the column.
+
+1. Create three columns named `id`, `first`, and `last`
+
+1. Specify the data-type of the value for each column. Even if there is a specified data-type, a value of any data-type can still be stored in the column.
   - Constraints can be passed in to restrict certain data-types
   - eg: `first TEXT NOT NULL` will accept any value not equal to null
 
