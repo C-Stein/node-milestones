@@ -3,7 +3,7 @@
 ## Introduction
 
 [Command-line arguments][args] or parameters are pieces of information that a
-user can alter or add context the operation of a command-line program.
+user can submit to alter or add context to the operation of a command-line program.
 In Node.js, we can access the command-line arguments in the
 [`process.argv`][argv] array.
 
@@ -21,11 +21,6 @@ want to access the command-line arguments, you need to start at the 3rd element
 or index 2 of the `argv` array. Also, be aware that all elements in the `argv`
 array are expressed as JavaScript `String`s. Depending on your use case, you may
 need to coerce them to another data type.
-
-## Topics Covered
-
--   Command-line applications
--   Command-line arguments
 
 ## Requirements
 

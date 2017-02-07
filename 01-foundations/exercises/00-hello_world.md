@@ -70,6 +70,7 @@ Hello, World!
 ## Additional Reading
 
 -   [Node.js](https://nodejs.org/)
+-   [Node's creator introduces Node.js](https://www.youtube.com/watch?v=jo_B4LTHi3I&t=858s)
 -   [Command-line interface](https://en.wikipedia.org/wiki/Command-line_interface)
 -   [Node.js ES2015 Support](http://node.green/)
 -   [JavaScript Web APIs](https://developer.mozilla.org/en-US/docs/Web/Reference/API)
