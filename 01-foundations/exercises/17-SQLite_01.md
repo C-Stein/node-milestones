@@ -76,10 +76,10 @@ db.run("INSERT INTO employees VALUES (2, 'Jim', 'Halpert')");
 //  2 | 'Jim'     | 'Halpert'
 ```
 
-The above statements may look different, but they will both insert a record with `id`, `first`, and `last` values into the table. Omitting the `(id, first, last)` from the first statement will not change the outcome, but make sure that the values (eg: `(0, 'Michael', 'Scott')`) which are passed in are in the **same order as they were defined when the table was created.**
+The above statements may look different, but they will both insert a record with `id`, `first`, and `last` values into the table. Omitting the `(id, first, last)` from the first statement will not change the outcome, but make sure that the values (eg: `(0, 'Michael', 'Scott')`) are in the **same order as they were defined when the table was created.**
 
 
-#### Dynamic Insert with JavaScript
+#### Dynamic Inserts with JavaScript
 
 First lets create an array of object. Each object will hold information on an employee.
 
@@ -94,7 +94,6 @@ const employeeArray = [
 Now we can iterate over the `employeeArray` and insert each employee to the database.
 
 ```js
-
 employeeArray.forEach((obj) => {
   // Using ES6 string templating, we can create an insert statement for each object
   db.run(`INSERT INTO employees VALUES (${obj.id}, '${obj.firstName}', '${obj.lastName}')`);
@@ -110,26 +109,63 @@ employeeArray.forEach((obj) => {
 ```
 
 
+#### Querying the Database
+
+Now that the table we created has record, lets retrieve the data and view it. We can use `db.all()` to do this. There are other ways to retrieve data, check the [sqlite3 API docs](https://github.com/mapbox/node-sqlite3/wiki/API) for more information.
+
+```js
+// db.all() first runs the query
+// then calls a callback function and passes all resulting rows
+db.all("SELECT * FROM employees", (err, allRows) => {
+  // allRows is an array containing each row from the query
+  allRows.forEach(each => {
+    console.log(each.id, each.first + ' ' + each.last);
+  });
+});
+```
 
 
+#### Error Handling
+
+Each of the database methods can receive an optional callback function, and this is where we can check for errors. Uncaught errors will be logged to the console, but so will the entire stack trace, which can be difficult to read.
+
+We can create a custom function which can console log our custom errors.
+
+```js
+// errorHandler is a function which accepts an error object
+const errorHandler = (err) => {
+  if (err) { // If there is an error obj, it will be console logged
+    console.log(`Msg: ${err}`);
+  };
+};
+```
+
+Now we can pass our error handler function into our database statements to check for errors.
+
+```js
+// If an error is thrown when this statement is run, our function
+// will log it to the console
+db.run("INSERT INTO employees VALUES (2, 'Jim', 'Halpert')", errorHandler);
 
 
+db.all("SELECT * FROM employees", (err, allRows) => {
+  errorHandler(err); // We can also check for errors here
+
+  // <-- Do something with results from database -->
+});
+```
 
 
+#### Closing the Database
 
+Once all statements have been ran, the database connection should be closed. We can do that with `db.close()`. Errors can also be listened for as well as a successful close event with a callback function.
 
-
-
-
-
-
-
-
-
-
-
-
-
+```js
+db.close(err => {
+  errorHandler(err); // Use custom error handling function
+  console.log('Database closed'); // Will only log on successful close
+})
+```
 
 #### Additional Resources
 
