@@ -64,34 +64,49 @@ The above statement will do the following:
 Lets insert out first records into the `employees` table.
 
 ```js
-db.run("INSERT INTO employees (id, first, last) VALUES (0, 'Michael', 'Scott')");
-// OUTPUT => { id: 1, first: 'Michael', last: 'Scott' }
+db.run("INSERT INTO employees (id, first, last) VALUES (1, 'Michael', 'Scott')");
+// employees TABLE
+// id |  first    |   last
+//  1 | 'Michael' | 'Scott'
 
-db.run("INSERT INTO employees VALUES (1, 'Jim', 'Halpert')");
-// OUTPUT => { id: 2, first: 'Jim', last: 'Halpert' }
+db.run("INSERT INTO employees VALUES (2, 'Jim', 'Halpert')");
+// employees TABLE
+// id |  first    |   last
+//  1 | 'Michael' | 'Scott'
+//  2 | 'Jim'     | 'Halpert'
 ```
 
 The above statements may look different, but they will both insert a record with `id`, `first`, and `last` values into the table. Omitting the `(id, first, last)` from the first statement will not change the outcome, but make sure that the values (eg: `(0, 'Michael', 'Scott')`) which are passed in are in the **same order as they were defined when the table was created.**
 
-Example:
-```sqlite
-CREATE TABLE employees (id INT, first TEXT, last TEXT)
-
-Correct: INSERT INTO employees VALUES (2, 'Pam', 'Beesly')
-
-Incorrect: INSERT INTO employees VALUES ('Beesly', 2, 'Pam')
-```
 
 #### Dynamic Insert with JavaScript
 
-First lets create an array of employees.
+First lets create an array of object. Each object will hold information on an employee.
 
 ```js
-let employeeArray = [
+const employeeArray = [
   { id: 3, firstName: 'Dwight', lastName: 'Schrute' },
   { id: 4, firstName: 'Andy', lastName: 'Bernard' },
-  { id: 5, firstName: 'Holly', lastName: 'Flax' }
+  { id: 5, firstName: 'Pam', lastName: 'Beesly' }
 ];
+```
+
+Now we can iterate over the `employeeArray` and insert each employee to the database.
+
+```js
+
+employeeArray.forEach((obj) => {
+  // Using ES6 string templating, we can create an insert statement for each object
+  db.run(`INSERT INTO employees VALUES (${obj.id}, '${obj.firstName}', '${obj.lastName}')`);
+});
+
+// employees TABLE
+// id |  first   |   last
+//  1 | 'Michael'| 'Scott'
+//  2 | 'Jim'    | 'Halpert'
+//  3 | 'Dwight' | 'Schrute'
+//  4 | 'Andy'   | 'Bernard'
+//  5 | 'Pam'    | 'Beesly'
 ```
 
 
