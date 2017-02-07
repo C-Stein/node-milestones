@@ -39,8 +39,7 @@ const db = new Database(':memory:');
 const db = new Database('db/example.sqlite');
 ```
 
-
-#### Creating a table
+#### Creating a Table
 
 Now lets create a table with some columns. First we will use `db.run()` to execute a SQLite statement to create a table.
 
@@ -54,6 +53,32 @@ The above statement will do the following:
 3. Specify the data-type of the value for each column. Even if there is a specified data-type, a value of any data-type can still be stored in the column.
   - Constraints can be passed in to restrict certain data-types
   - eg: `first TEXT NOT NULL` will accept any value not equal to null
+
+
+#### Simple Insert Statement
+
+Lets insert out first records into the `employees` table.
+
+```js
+db.run("INSERT INTO employees (id, first, last) VALUES (0, 'Michael', 'Scott')");
+// OUTPUT => { id: 0, first: 'Michael', last: 'Scott' }
+
+db.run("INSERT INTO employees VALUES (1, 'Jim', 'Halpert')");
+// OUTPUT => { id: 1, first: 'Jim', last: 'Halpert' }
+```
+
+The above statements may look different, but they will both insert a record with `id`, `first`, and `last` values into the table. Omitting the `(id, first, last)` from the first statement will not change the outcome, but make sure that the values (eg: `(0, 'Michael', 'Scott')`) which are passed in are in the **same order as they were defined when the table was created.**
+
+Example:
+```
+"CREATE TABLE employees (id INT, first TEXT, last TEXT)"
+
+Correct: "INSERT INTO employees VALUES (2, 'Pam', 'Beesly')"
+
+Incorrect: "INSERT INTO employees VALUES ('Beesly', 2, 'Pam')"
+```
+
+
 
 
 
