@@ -1,9 +1,6 @@
 # Third party modules
 
 ## Introduction
-
-TODO: Colors in the command-line
-
 Open up the [Node.js][node_repl] [REPL][repl] and copy-paste the following line:
 
 ```js
@@ -53,7 +50,7 @@ TODO: `package.json`, save vs. save-dev, `require`
 
 For this exercise we are going to use a popular Node.js module: [chalk][chalk]
 
-Create a JavaScript file to act as a Node.js program named `06.js`. This program
+Create a JavaScript file to act as a Node.js program named `flag.js`. This program
 print out a red, white, and blue American flag in the terminal. The stars should
 be white bold text with a blue background, the red stripes should be spaces with
 a red background, and the white stripes should be spaces with a white
@@ -69,7 +66,7 @@ Use the following format below.
 Expected:
 
 ```bash
-$ ./06.js
+$ ./flag.js
 ```
 
 ![Terminal Flag](http://i.imgur.com/DOMxrXU.png)

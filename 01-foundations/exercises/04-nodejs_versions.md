@@ -2,9 +2,6 @@
 
 ## Introduction
 
-TODO: ECMA, ECMA-262, TC39, ECMAScript, JavaScript...
-TODO: "don't break the web"
-TODO: browser vs server-side JavaScript concerns.
 TODO: Brendan Eich video?
 
 Node.js has several actively maintained versions. The current version of Node.js
@@ -52,7 +49,7 @@ TODO: Using nvm
 
 ## Requirements
 
-Create a JavaScript file to act as a Node.js program named `04.js`. The file
+Create a JavaScript file to act as a Node.js program named `node-version.js`. The file
 should be similar if not exactly the same as the previous exercise. However,
 run `nvm use` and change the Node.js version and make sure it works correctly in
 multiple versions.
@@ -62,12 +59,12 @@ Expected:
 ```bash
 $ nvm use node
 Now using node v6.3.1 (npm v3.10.5)
-$ ./04.js
+$ ./node-version.js
 Node.js version: v6.3.1
 V8 version: 5.0.71.57
 $ nvm use v4
 Now using node v4.4.7 (npm v3.10.5)
-$ ./04.js
+$ ./node-version.js
 Node.js version: 4.4.7
 V8 version: 4.5.103.36
 ```
