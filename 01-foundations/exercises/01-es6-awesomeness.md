@@ -238,8 +238,23 @@ let nums = [1,2,3,4,5,6,7,8,9];
 let [,,,,...numsJr] = nums
 
 console.log("numsJr", numsJr); // returns, [5,6,7,8,9]
-  
-[Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
+```
+
+#### [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) 
+You learned how to use these in the front end. But just in case you didn't know the nane, we mention them here. Beats concatenation hands-down. 
+
+```
+let quote = "Mary said, 'I love mixing double and single quotes!'";
+let myId = "quote" 
+
+// ick
+let log = "<p class='" + myId + '">" + quote + "</p>";
+
+// hip
+let log = `<p class="${myId}">${quote}</p>`
+```
+
+On to the exercise!   
 
 ## Requirements
 Create a file called `cheer.js` that performs a cheer, using a named passed to it. Use as many of these as you can, even if the code you write isn't as compact or 'efficient' as you would like. This is more about trying out some ES6 than being succinct.
