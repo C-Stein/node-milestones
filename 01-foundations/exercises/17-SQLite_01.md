@@ -11,7 +11,7 @@ What does that mean?
 
 ## Setup
 
-Feel free to follow along with this exercise, or you can read through it and use it as a reference for the [corresponding exercise]('./17-SQLite_02.md'). Make sure to run the following commands if you are coding along.
+Feel free to follow along with this exercise, or you can read through it and use it as a reference for the [corresponding exercise](01-foundations/exercises/17-SQLite_02.md). Make sure to run the following commands if you are coding along.
 
 ```
 cd workspace/node/exercises
