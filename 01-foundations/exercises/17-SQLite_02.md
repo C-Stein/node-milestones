@@ -2,7 +2,7 @@
 
 In this exercise you will create a SQLite database, create tables, insert records to the table, and query the database. We will be using the npm module [sqlite3](https://www.npmjs.com/package/sqlite3).
 
-This exercise is based on the [SQLite Intro Exercise](01-foundations/exercises/17-SQLite_01.md), so make sure that you have completed it before attempting this exercise.
+This exercise is based on the [SQLite Intro Exercise](17-SQLite_01.md), so make sure that you have completed it before attempting this exercise.
 
 
 ## Setup
