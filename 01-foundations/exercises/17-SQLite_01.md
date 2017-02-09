@@ -9,6 +9,19 @@ What does that mean?
 1. The entire database instance exists in a single cross-platform file.
 
 
+## Setup
+
+Feel free to follow along with this exercise, or you can read through it and use it as a reference for the [corresponding exercise]('./17-SQLite_02.md'). Make sure to run the following commands if you are coding along.
+
+```
+cd workspace/node/exercises
+mkdir sqlite101
+cd sqlite101
+npm install sqlite3 --save
+touch sqlite3Intro.js
+```
+
+
 ## sqlite3
 
 sqlite3 is an npm module that provides a software interface with a SQLite database. With sqlite3 and NodeJS you have the ability to create tables, drop tables, make inserts, query a SQLite database, and more.
@@ -23,22 +36,18 @@ const { Database } = require('sqlite3').verbose();
 
 // Returns a new database object and automatically opens the database
 // Database method accepts a callback function for successful connection
-const db = new Database(':memory:', () => console.log('Connected!'));
+const db = new Database('db/example.sqlite', () => console.log('Connected!'));
 ```
 
-### Creating a database in memory vs. as a file
 
-The below lines of code are both creating and opening a database, but how the database will be saved is the difference.
+### Creating a database
 
 ```js
-// Creates an anonymous in-memory database
-// Contents will be lost when the database connection closes
-const db = new Database(':memory:');
-
 // Creates a database which will be written to a file on disk
 // Changes will persist once connection closes
 const db = new Database('db/example.sqlite');
 ```
+
 
 ### Creating a Table
 
