@@ -1,9 +1,6 @@
 # Node.js versions
 
 ## Introduction
-
-TODO: Brendan Eich video?
-
 Node.js has several actively maintained versions. The current version of Node.js
 is considered "Stable" and there are other prior versions which are still being
 maintained. The most significant of these are considered "LTS" or in a long

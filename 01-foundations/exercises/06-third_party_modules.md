@@ -129,6 +129,7 @@ $ ./flag.js
 -   [Escape characters][esc]
 -   [Node.js REPL][node_repl]
 -   [Read Eval Print Loop][repl]
+-   [What is npm?](https://docs.npmjs.com/getting-started/what-is-npm)
 
 [ansi]: https://en.wikipedia.org/wiki/ANSI_escape_code
 [chalk]: https://www.npmjs.com/package/chalk
