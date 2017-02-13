@@ -13,7 +13,7 @@ chart. This will give 365 of daily prices. Use these prices to get an average.
 Expected:
 
 ```bash
-$ ./10.js AAPL
+$ ./stocks.js AAPL
 $123.45
 ```
 
