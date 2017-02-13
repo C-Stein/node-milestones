@@ -74,7 +74,7 @@ $ ./example.js
 This is some text without a newline$ ./example.js # Next command
 ```
 
-## streams
+### Streams
 
 You might be familiar task runner called Gulp. It uses Node.js streams to
 execute various tasks.
@@ -91,7 +91,17 @@ gulp.task('sass', () => (
 
 Gulp uses three types of streams to accomplish tasks. A `Readable` which
 retrieves data, a `Transform` stream to manipulate the data, and a `Writable`
-stream to give the manipulated data a destination.
+stream to give the manipulated data a destination. 
+
+A stream is a mechanism for moving data between two points via a 'pipe', as you see above in the Gulp example. 
+
+1. The readable stream grabs scss files, pipes them to...  
+1. the transform stream, which runs the 'sass()' coversion function on them, then pipes the converted css files to...  
+1. The writable stream that sticks them in the css directory  
+
+Since the terms we're talking about include 'streams' and 'pipes', water is the typical analogy you will see when explaining how this works. A stream can be thought of as a garden hose, or a kitchen sink. The hose or faucet is connected to a water source. When the source pushes water into the hose/pipes, it flows through it. At this point, the water can be used by a sprinkler or used to fill a pitcher.
+
+Most importantly, remember that streams emit events to control the flow of water...er...data.
 
 ### `Readable` Streams
 
@@ -149,7 +159,21 @@ End of stream
 Notice how the "data" event calledback twice because it receive two "chunks" of
 data.
 
-TODO: READABLE `_read`
+Readable streams have a `_read` method that that happens every time a chunk of data is received. We can override this method to tell it how to handle the data -- what to push into the stream and deliver to whatever will be consuming our read stream.
+
+Pushing the strings "1" to "100" 
+```
+let i = 0
+
+readStream._read = () => {
+  if (i < 100) {
+    readStream.push(null) // when null is pushed to the stream, it emits an 'end' event
+  }
+  else {
+    readStream.push(`${i}`)  // have to make i a string. Streams only handle strings and buffers
+  }
+}
+```
 
 ### `.pipe`
 
@@ -222,9 +246,9 @@ readStream.pipe(writeStream)
 ```
 
 The first argument to the `_write` function is the "chunk" of data received by
-the stream. The third argument is a callback to execute when the callback is
-complete. If this callback doesn't fire, the second chunk will never be
-received. If there is a delay in this callback being executed we call that
+the stream.  
+The second argument is an optional encoding parameter, like 'UTF-8'. The underscore is passed in here as a placeholder that says "we don't want to pass anything in".  
+The third argument is a callback to execute when the callback is complete. If this callback doesn't fire, the second chunk will never be received. If there is a delay in this callback being executed we call that
 "back pressure".
 
 ### `Transform` Streams
@@ -255,15 +279,10 @@ JSONStringify._transform = (buffer, _, cb) => (
 readStream.pipe(JSONStringify).pipe(process.stdout)
 ```
 
-## Topics Covered
-
--   stdout
--   streams
-
 ## Requirements
 
-Create a JavaScript file to act as a Node.js program named `09.js`. This program
-should read a file `09.json` and output to a file `09_Caps.json`. Use the second
+Create a JavaScript file to act as a Node.js program named `streams.js`. This program
+should read a file `languages.json` and output to a file `languages_caps.json`. Use the second
 command-line argument to declare the destination. You will not need to make your own `Readable` for this exercise. Simply use
 [`fs.createReadStream`][createreadstream] instead. In between, all letters
 should be capitalized with your own `Transform` stream. Then the data should be passed to your own `Writable` stream. The [`fs.appendFile`][appendfile] will be helpful
@@ -309,6 +328,7 @@ $ cat 09_Caps.json
 [`pipe`][pipe]
 [`createReadStream`][createreadstream]
 [Streams2][streams2]
+[Buffers][https://nodejs.org/api/buffer.html]
 [`writeFile`][writefile]
 
 [eof]: https://en.wikipedia.org/wiki/End-of-file

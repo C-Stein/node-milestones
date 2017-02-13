@@ -1,8 +1,6 @@
-<!-- TODO: Convert from PY to Node -->
-
 # Bag o' Loot
 
-This exercises will help with your comprehension of [command line parameters](http://www.pythonforbeginners.com/argv/more-fun-with-sys-argv).
+This exercise plunges you right into TDD. You will start with an empty project. O lines of code. Nowhere to go but up. Each piece of your app's functionality will be created as responses to a test or tests that setup an expectation for a certain outcome. Every test will fail when first executed, because the logic to make them pass will not exist yet. 
 
 ## Setup
 
@@ -18,50 +16,39 @@ You have an acquaintance whose job is to, once a year, delivery presents to the 
 1. Add a toy to the bag o' loot, and label it with the child's name who will receive it. 
 
     ```bash
-    python lootbag.py add kite suzy
-    python lootbag.py baseball michael
+    ./lootbag.js add kite suzy
+    ./lootbag.js add baseball michael
     ```
 
 1. Remove a toy from the bag o' loot in case a child's status changes before delivery starts.
 
     ```bash
-    python lootbag.py remove suzy kite
-    python lootbag.py remove michael baseball
+    ./lootbag.js remove suzy kite
+    ./lootbag.js remove michael baseball
     ```
 
 1. Produce a list of children currently receiving presents.
 
     ```bash
-    python lootbag.py ls
+    ./lootbag.js ls
     ```
 
 1. List toys in the bag o' loot for a specific child.
 
     ```bash
-    python lootbag.py ls suzy
+    ./lootbag.js ls suzy
     ```
 
 1. Specify when a child's toys have been delivered.
 
     ```bash
-    python lootbag.py delivered suzy
+    ./lootbag.js delivered suzy
     ```
 
 
 ## Requirements
 
 **Write a test before you write implementation code**
-
-```python
-# This is only an example. If I find this code in your project
-#  I will make you go back and delete it and write your own test.
-def test_toys_for_child_can_be_added_to_bag ()
-{
-    lootBag = Bag()
-    lootBag.add_toy_for_child("kite", "suzy");
-    self.assertEqual("kite", lootBag.child_items("suzy")[0]);
-}
-```
 
 1. Items can be added to bag.
 1. Items can be removed from bag, per child only. Removing `ball` from the bag should not be allowed. A child's name must be specified.
