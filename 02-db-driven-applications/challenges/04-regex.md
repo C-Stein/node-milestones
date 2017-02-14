@@ -1,10 +1,17 @@
-<!-- TODO: Convert from PY to Node; Add exercise -->
+<!-- Good to go-ish -->
 
 # Regular Expressions
 
-Regular expressions is an example of a context-free grammar. This means that as a developer there's little to no constraints on the order and combination of expressions.
+A regular expression (regex or regexp for short) is a special text string for describing a search pattern. Regular expressions form a small, subset language that is part of JavaScript, but also of many other languages as well. Learning how to sling regex, especially in the back-end is one way to rise above the crowd of developers who always meant to grokk regex but never quite got around to it.
 
-In contrast, Python is an example of a *context-bound* programming language. This is where there are rules that say where certain expressions should go.
+In JavaScript, regular expressions are also objects (surprise, surprise). This means you can create a regex in a couple of different ways: as a literal or by creating an instance of the RegExp object.  
+
+literal: `const myRe = /foo/`  
+instance: `const myRe = new RegExp("foo")`  
+
+You could use the above to determine if a string contains those characters
+`myRe.test("I like food")` // returns true
+
 
 ## Character Classes
 
@@ -127,12 +134,16 @@ Using the above pattern, `Nov 10, 2007` would result in 3 dictionary with the re
     "year":  "2007"
 }
 ```
+## Exercise
+Instead of a single exercise, use the following resources to test your regex abilities. These are good to come back to at various points to refresh your memory or push your skills to the next level.  
++ [RegexOne](https://regexone.com/)
++ [Regex Golf](https://alf.nu/RegexGolf)
++ [Regex Crossword](https://regexcrossword.com/)
 
-# Resources
-
+## Additional Resources
+* [Regex in JavaScript](https://www.tutorialspoint.com/javascript/javascript_regexp_object.htm)
 * [RegExr](http://www.regexr.com/) - A wonderful online tool to learn regular expressions.
-* [RegexOne](https://regexone.com/) - Learn Regular Expressions with simple, interactive exercises.
 * [RegularExpressions.info](http://www.regular-expressions.info/tutorial.html) - One of the best tutorials to learn regular expressions
 * [Regex Pal](http://www.regexpal.com/) - A free, online regular expression playground
-
+* [A deeper dive](http://eloquentjavascript.net/09_regexp.html)
 
