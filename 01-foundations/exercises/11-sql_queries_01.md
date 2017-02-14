@@ -1,4 +1,4 @@
-# Introduction to SQL with Music History
+# Introduction to SQL queries with Music History
 Now that you have created a visual diagram of how the tables in Music History relate to each other, let's stay in this database while you learn how to query it to get back exactly the data you need.
 
 ## Setup
@@ -6,51 +6,6 @@ Now that you have created a visual diagram of how the tables in Music History re
 Create a file called `queries.sql`
 
 > **Note:** The `.sql` extension is common practice for files storing SQL queries
-
-### Installation of SQLite (if needed)
-
-To get started, type the following command to check if you already have SQLite installed.
-
-```bash
-$ sqlite3
-```
-
-And you should see:
-
-```
-SQLite version 3.7.15.2 2014-08-15 11:53:05
-Enter ".help" for instructions
-Enter SQL statements terminated with a ";"
-sqlite>
-```
-
-If you do not see above result, then it means you do not have SQLite installed on your machine. Follow the appropriate instructions below.
-
-#### For Windows
-
-Go to [SQLite Download page](http://www.sqlite.org/download.html) and download the precompiled binaries for your machine. You will need to download `sqlite-shell-win32-*.zip` and `sqlite-dll-win32-*.zip` zipped files.
-
-Create a folder `C:\sqlite` and unzip the files in this folder which will give you `sqlite3.def`, `sqlite3.dll` and `sqlite3.exe` files.
-
-Add `C:\sqlite` to your [PATH environment variable](http://dustindavis.me/update-windows-path-without-rebooting/) and finally go to the command prompt and issue `sqlite3` command.
-
-#### For Mac
-
-First, try to install via Homebrew:
-
-```
-brew install sqlite3
-```
-
-If that doesn't work, download the package from above. After downloading the files, follow these steps:
-
-```
-$tar -xvzf sqlite-autoconf-3071502.tar.gz
-$cd sqlite-autoconf-3071502
-$./configure --prefix=/usr/local
-$make
-$make install
-```
 
 #### Talking to a Database
 
