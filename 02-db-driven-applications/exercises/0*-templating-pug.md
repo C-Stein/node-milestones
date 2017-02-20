@@ -4,7 +4,7 @@
 
 #### What is a templating engine?
 
-A template engine enables you to use static template files in your application. At runtime, the template engine replaces variables in a template file with actual values, and transforms the template into an HTML file sent to the client. This approach enables us to render HTML files server side and send them to the client.
+A template engine enables you to use static template files in your application. At runtime, the template engine first parses the template. This allows embedded JavaScript expressions and variables to be evaluated and then transformed into an HTML file which is sent to the client. This approach enables us to pipe data from the server to the template, so it can then be parsed and sent to the client.
 
 #### Pug
 
