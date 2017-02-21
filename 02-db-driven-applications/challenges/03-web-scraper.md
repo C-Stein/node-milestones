@@ -1,5 +1,3 @@
-<!-- Good to go -->
-
 # Web scraper
 When planning your front-end capstone you may have run into the problem of not finding an appropriate API for the data you wanted to use in your project. This was a common problem not so long ago before APIs became so popular. The solution? [Web scraping](https://en.wikipedia.org/wiki/Web_scraping), which entails extracting data from websites by pulling it straight out of a site's HTML. Any content that can be viewed on a webpage can be scraped.
 

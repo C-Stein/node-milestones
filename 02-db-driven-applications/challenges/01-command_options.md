@@ -1,14 +1,9 @@
 # Command Flags
 
 ## Introduction
+You have used [command-line flags][flags] many times, believe it or not. Every time you make a git commit, you're likely typing something like `git commit -m "works on my machine"`. That `-m` is a flag that tells the git code that what follows is going to be your commit message.
 
-[Command-line flags][flags]
-
-## Topics Covered
-
--   Command-line applications
--   Command-line flags
--   Third-party modules
+Suppose you wanted to allow your command line script to accept input that translated a phrase to one of multipe languages. You can't use a dropdown input since there's no DOM, but you could offer your users an affordance that allows them to designate the language via a flag inserted before the phrase argument. `-f` for French, `-g` for German, `-pl` for Pig Latin.
 
 ## Requirements
 
@@ -22,6 +17,7 @@ not with the name flag should be ignored and respond with a default "Hello,
 World!".
 
 Use the [yargs][yargs] node module for command-line option parsing.
+Helpful yargs [tut][tut]
 
 Expected:
 
@@ -51,3 +47,4 @@ Hello, Erin Espinoza
 
 [flags]: https://en.wikipedia.org/wiki/Command-line_interface#Command-line_option
 [yargs]: http://yargs.js.org/
+[tut]: https://michelenasti.com/2017/02/02/node-useful-libraries-manage-command-line-arguments-with-yargs.html

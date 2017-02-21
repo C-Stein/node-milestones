@@ -1,5 +1,3 @@
-<!-- good to go -->
-
 # Multiple Command Flags
 
 ## Introduction

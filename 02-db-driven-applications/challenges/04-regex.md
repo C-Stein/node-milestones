@@ -1,5 +1,3 @@
-<!-- Good to go-ish -->
-
 # Regular Expressions
 
 A regular expression (regex or regexp for short) is a special text string for describing a search pattern. Regular expressions form a small, subset language that is part of JavaScript, but also of many other languages as well. Learning how to sling regex, especially in the back-end is one way to rise above the crowd of developers who always meant to grokk regex but never quite got around to it.
