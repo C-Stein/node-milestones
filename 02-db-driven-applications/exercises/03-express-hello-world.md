@@ -23,7 +23,7 @@ npm install express --save
 ```
 Behind all the nice built-in functionality, an Express application still boils down to http.createServer(...). 
 You'll notice some similarities to `createServer`, which we used in the previous exercise.
-The same example as above:
+The same example as above, written with the core `http` module instead of Express:
 
 ```js
 const { createServer } = require('http')
@@ -38,7 +38,7 @@ app.on('request', (req, res) => {
 app.listen(3000)
 ```
 
-One noted idfference between the two: In the express route handler, it is recommended to use `res.send` rather than
+One noted difference between the two: In the express route handler, it is recommended to use `res.send` rather than
 `res.end` if you are sending data. Only use `res.end` to quickly end a response stream without any data. Keep that in mind when we write error handlers for our Express requests.
 
 [res.end](http://expressjs.com/en/api.html#res.end) vs.
