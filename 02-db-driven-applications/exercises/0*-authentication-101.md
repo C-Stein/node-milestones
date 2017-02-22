@@ -59,11 +59,7 @@ echo 'hello' | md5  // OUTPUT=> b1946ac92492d2347c6235b4d2611184
 echo 'hello' + 'QxLUF1bgIAdeQX' | md5  // OUTPUT=> 5a55d9024d7f065a08c69bc0ca35cbf2
 ```
 
-
-
-
-- salting
-- peppering
+Check out [pepper](https://en.wikipedia.org/wiki/Pepper_(cryptography)) for more information on authentication.
 
 
 ### Additional Resources
