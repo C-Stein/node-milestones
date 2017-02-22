@@ -8,6 +8,13 @@ Authenticating with a single user component would be referred to as single facto
 Authentication should not be confused with **authorization**, which is the act of granting or rejecting a user access to resources based on specific rules or a policy.
 
 
+## Authentication Best Practices
+
+1. Never store plain text passwords
+1. Make usernames case insensitive (e.g.: 'smith' is the same as 'Smith') as well as unique
+1. For apps using personal information, **do not write your own authentication.** Leave it to the specialists.
+
+
 ## Encryption
 
 Encryption is the process of using an algorithm to encode data (referred to as plain text) into unreadable data (referred to as cipher text) of undetermined length. An algorithm usually uses a self generated, pseudo-random encryption key to transform the data. There are two types of encryption:
@@ -33,8 +40,23 @@ Now try running the same command. Notice how the hash does not change. Try hashi
 
 A common practice is to run the input through the hash function multiple times, which adds more randomness to the generated hash. Try running the following command and compare the hash to the first one:
 
+`echo 'hello' | md5 | md5 // OUTPUT=> 5db9f475f4cb835f1afccf4bb1a706b7`
+
+This ensures that even matching messages will produce different hashes if one is ran through the hash function multiple times.
+
+
+#### Salting a hash
+
+There are weaknesses to storing hashes, such as a brute force attack where a computer would continually calculate hashes until it finds a match, as well as a [rainbow table](https://en.wikipedia.org/wiki/Rainbow_table). A rainbow table is a precomputed table of hashes that a computer can use to simply compare hashes instead of continually calculating hashes with a hash function.
+
+A way to defend against these precomputed lists are to use [salts](https://en.wikipedia.org/wiki/Salt_(cryptography)), or randomly generated data that can be various lengths. A salt can be appended or prepended with a plaintext password and then hashed to create a new value which can then be stored.
+
 ```
-echo 'hello' | md5 | md5 // OUTPUT=> 5db9f475f4cb835f1afccf4bb1a706b7
+// A hash with no salt
+echo 'hello' | md5  // OUTPUT=> b1946ac92492d2347c6235b4d2611184
+
+// A salted hash
+echo 'hello' + 'QxLUF1bgIAdeQX' | md5  // OUTPUT=> 5a55d9024d7f065a08c69bc0ca35cbf2
 ```
 
 
