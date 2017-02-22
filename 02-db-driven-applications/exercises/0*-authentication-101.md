@@ -10,7 +10,7 @@ Authentication should not be confused with **authorization**, which is the act o
 
 ## Encryption
 
-Encryption is the process of using an algorithm to encode data into a series of unreadable data of undetermined length. An algorithm usually uses a pseudo-random encryption key to transform the data. There are two types of encryption:
+Encryption is the process of using an algorithm to encode data (referred to as plain text) into unreadable data (referred to as cipher text) of undetermined length. An algorithm usually uses a self generated, pseudo-random encryption key to transform the data. There are two types of encryption:
 
 1. Symmetric Key: the encryption key is used to both decrypt and encrypt the data. This key needs to be in possession of all parties needing access to the encrypted data.
 
@@ -18,10 +18,28 @@ Encryption is the process of using an algorithm to encode data into a series of 
 
 #### Why use encryption?
 
-Encryption is ideal for a situation where data needs to be made secure, but at some point it will then need to be decrypted. This ability to reverse the encrypted data makes it less than ideal for authenticating a user's password. If the private encryption key is exposed or the algorithm that was used to encrypt the password is known, an attacker can then decrypt the password.
+Encryption is ideal for a situation where data needs to be made secure, but at some point it will then need to be decrypted. This ability to reverse the encrypted data makes it less than ideal for authenticating a user's password. If the private encryption key is exposed or the algorithm that was used to encrypt the password is known, the password can then be decrypted.
 
 
 ## Hashing
+
+An alternative to encryption would be to use a hash function. A hash function is a mathematical algorithm that can take data of any size (referred to as a message) and convert it into a string of a fixed size (referred to as a hash). Once the data has been hashed, there is no reversal process, unlike encryption. The only way to generate matching hashes is to have matching input messages. Even a small change to the message will generate an extensively different hash.
+
+MD5 is the most widely known hashing function. It produces a 32 digit hexadecimal number. Try running this command in the terminal to hash a string with MD5:
+
+`echo 'hello' | md5  // OUTPUT=> b1946ac92492d2347c6235b4d2611184`
+
+Now try running the same command. Notice how the hash does not change. Try hashing different strings, or change a single letter in `'hello'` and notice the difference.
+
+A common practice is to run the input through the hash function multiple times, which adds more randomness to the generated hash. Try running the following command and compare the hash to the first one:
+
+```
+echo 'hello' | md5 | md5 // OUTPUT=> 5db9f475f4cb835f1afccf4bb1a706b7
+```
+
+
+
+
 - salting
 - peppering
 
@@ -29,3 +47,4 @@ Encryption is ideal for a situation where data needs to be made secure, but at s
 ### Additional Resources
 
 - [Wikipedia Authentication](https://en.wikipedia.org/wiki/Authentication)
+- [Cryptographic Hash Function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
