@@ -66,3 +66,4 @@ Check out [pepper](https://en.wikipedia.org/wiki/Pepper_(cryptography)) for more
 
 - [Wikipedia Authentication](https://en.wikipedia.org/wiki/Authentication)
 - [Cryptographic Hash Function](https://en.wikipedia.org/wiki/Cryptographic_hash_function)
+- [Salt vs Pepper](http://simplicable.com/new/salt-vs-pepper)
