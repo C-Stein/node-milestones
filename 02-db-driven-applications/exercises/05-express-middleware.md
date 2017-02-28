@@ -1,9 +1,7 @@
   # Express Middleware
 
 ## What is Middleware
-
-> Middleware is/are function(s) [that] run between the client request and the server answer. The most common middleware functionality needed are error managing, database interaction, getting info from static files or other resources.
-> ###### <em>[Sergio: From Stack Overflow](http://stackoverflow.com/users/2256325/sergio)</em>
+As we mentioned earlier, a middleware is a function that runs between the client request and the server answer. Let's dig a little deeper into middleware and 
 
 <p> So you have a simple express server set up from the previous exercises. You are receiving the user's request and sending your response. <strong>You have a stream.</strong> A pretty boring stream, but a stream nonetheless. What if we wanted to DO something with our request before deciding what to send as a response?</p>
 <p> Remember when we learned about [transform streams](https://github.com/nashville-software-school/node-milestones/blob/master/01-foundations/exercises/09-streaming-io.md#transform-streams)? </p>
@@ -44,14 +42,14 @@ app.use(function(req, res, next) {
   - /see-our-chickens
   - /see-our-eggs
 
-  > 2. Create a directory in your project for your simple html pages. Each route should have it's own webpage.
+  > 2. Create a directory in your project for your simple html pages. Each route should have its own webpage.  
 
-  > 3. Use a middleware to let your app know which static (cough, hint) html files it should use.
+  > 3. Use a middleware to let your app know which static (cough, hint) html files it should use.  
 
-  > 4. Create your own middleware that will place an Easter Egg in your app (see below for specs).
+  > 4. Create your own middleware that will place an Easter Egg in your app (see below for specs).  
 
-<br>
-> Output: If the user goes to any of your routes, they should see the corresponding html page. If they go to a url that contains the word 'egg', the console should display the following:
+### Output
+If the user goes to any of your routes, they should see the corresponding html page. If they go to a url that contains the word 'egg', the console should display the following:
 
 ```
 You found the Easter Egg at Mon Sep 12 2016 15:36:57 GMT-0500 (CDT)

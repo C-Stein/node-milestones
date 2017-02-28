@@ -102,3 +102,4 @@ Using `psql` is as simple as that! Now that you have the power to create tables,
 ### Additional Resources
 
 [PostgreSQL Tutorial](https://www.tutorialspoint.com/postgresql/index.htm)
+[PostgreSQL Exercises](https://www.pgexercises.com/)
