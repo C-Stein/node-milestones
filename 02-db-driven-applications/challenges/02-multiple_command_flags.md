@@ -63,12 +63,6 @@ const car = new Car({
 Similar to the pattern above, command-line flags map easily to JavaScript
 objects. This gives your data context and the order doesn't matter.
 
-## Topics Covered
-
--   Command-line applications
--   Command-line flags
--   Third-party modules
-
 ## Requirements
 
 For this exercise you will create a pizza ordering app for hackers. This

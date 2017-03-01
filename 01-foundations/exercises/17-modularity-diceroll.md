@@ -1,7 +1,7 @@
 # Modularity
 
 Modularlity is very important in programming and that is no different for
-Node.js apps.  The Node.js ecosystem encourages developers to create many very
+Node.js apps. The Node.js ecosystem encourages developers to create many very
 tiny modules, sometimes with only a single exported function.
 
 Example:
@@ -18,20 +18,9 @@ function isPromise(obj) {
 List of other ["awesome"](https://github.com/sindresorhus/awesome) tiny
 Node.js modules: https://github.com/parro-it/awesome-micro-npm-packages
 
-## Structure
-
-TODO: Compare bower, grunt-cli, and http-server
-TODO: Command line apps don't need an extension.
-TODO: bin property in package.json
-TODO: process.title
-TODO: process.exit and exit codes
-TODO: `npm link`
-TODO: export patterns, function, object, singleton caching
-TODO: multiple dice roll statistics (bell curve)
-
 ## Requirements
 
-Create a program that performs a dice roll. You will need a folder `01` with at
+Create a program that performs a dice roll. You will need a folder `dice-roll` with at
 least 5 files to accomplish this task. See the 01 templates folder in this
 milestone for starter code and structure:
 

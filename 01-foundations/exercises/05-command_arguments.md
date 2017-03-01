@@ -3,7 +3,7 @@
 ## Introduction
 
 [Command-line arguments][args] or parameters are pieces of information that a
-user can alter or add context the operation of a command-line program.
+user can submit to alter or add context to the operation of a command-line program.
 In Node.js, we can access the command-line arguments in the
 [`process.argv`][argv] array.
 
@@ -22,14 +22,9 @@ or index 2 of the `argv` array. Also, be aware that all elements in the `argv`
 array are expressed as JavaScript `String`s. Depending on your use case, you may
 need to coerce them to another data type.
 
-## Topics Covered
-
--   Command-line applications
--   Command-line arguments
-
 ## Requirements
 
-Create a JavaScript file to act as a Node.js program named `05.js`. This program
+Create a JavaScript file to act as a Node.js program named `args.js`. This program
 should accept at least one number as a command-line argument. The arguments
 should be [summed up][sum] into a single value.
 
@@ -38,11 +33,11 @@ Don't worry about [floating point][floats] rounding errors.
 Expected:
 
 ```bash
-$ ./05.js 1
+$ ./args.js 1
 1
-$ ./05.js -.42 0 3.14
+$ ./args.js -.42 0 3.14
 2.72
-$ ./05.js .1 .2
+$ ./args.js .1 .2
 0.30000000000000004
 ```
 

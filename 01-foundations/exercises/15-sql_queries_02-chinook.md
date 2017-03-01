@@ -1,33 +1,12 @@
-#### Talking to a Database
-
-###### SQL Statements
- * SQL keywords are written in CAPS
- * Basic Structure of a SQL statement:
-	`SELECT ______   
-	FROM ______
-	JOIN ______ ON ______
-	WHERE ______`
-
-* Example:  `SELECT * FROM employees WHERE name LIKE ‘b%’`
-   * LIKE means “matches a pattern” and % means “starts with” (wildcard).
-
-* Example 2: `SELECT products.id, products.name FROM order_details JOIN products ON  order_details.product_id = products.id WHERE order_details.order_id = 10250`
-
-###### Joins
-* http://blog.codinghorror.com/a-visual-explanation-of-sql-joins/
-* With a join, you must specify how the table is joined using ON. Otherwise, you will get all the combinations possible of one table row matched with another table row.
-  * **Inner Join** matches one table with another table row for row. If one row doesn’t have its pair on another table, it will be excluded. It will only show matching row pairs.
-  * **Outer Join** matches two tables row for row but includes rows that are not paired up, aka rows that have a pair with a null in the other table.
-
-
-
+### More SQL query fun from the fine folks who brought you the previous SQL exercises.
+Let's cement your SQL query bonafides with a tougher test of your new skills. Keep the Chinook db handy...
 
 ## Requirements
 Use the [Chinook Database](https://chinookdatabase.codeplex.com/) and the [DB Browser for SQLite](http://sqlitebrowser.org/) we downloaded in the ERD exercise.
 
 For each of the following exercises, provide the appropriate query.
 
-Keep your successful queries in a `.md` file.
+Keep your successful queries in a `chinook-queries.sql` file.
 
 1. Provide a query showing Customers (just their full names, customer ID and country) who are not in the US.
 2. Provide a query only showing the Customers from Brazil.

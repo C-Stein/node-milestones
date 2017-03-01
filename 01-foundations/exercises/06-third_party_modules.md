@@ -1,9 +1,6 @@
 # Third party modules
 
 ## Introduction
-
-TODO: Colors in the command-line
-
 Open up the [Node.js][node_repl] [REPL][repl] and copy-paste the following line:
 
 ```js
@@ -34,26 +31,67 @@ utilize an open source module for this.
 
 In the browser, to use code written by others we need to download the JavaScript
 files through bower or use a CDN. We then add a `<script>` tag and receive a
-global variable that we can access the code contained.
+global variable that we can use to access the code contained in those files.
 
 In Node.js we can use code written by a third-party, but we are not required to
 use global variables like the browser. In addition, we cannot use CDNs so we
-must download the code.
+must download the code. Node comes bundled with [npm][npm], the Node package manager. 
+It allows you to effortlessly pull in 3-party libraries hosted on github and save 
+them to your specific project, or save them globally when the module is something you need to 
+access from anywhere on the command line.
 
+#### Installing packages locally
+The command to download the code we want to use, in its most basic form, is
 `npm install modulename`
 
-TODO: `package.json`, save vs. save-dev, `require`
+This pulls down the requested package and installs it in the directory where the command was run.
+A folder called `node_modules` is added to the directory to hold the package, as well as any other pacakages your requested code depends on to run. Sometimes, there are a surprising number of these additional libraries that come along for the ride. It's all good. Modules that require other modules that themselves depend on other modules is good practice, and is a pattern we will strive to use in our own code.  
 
-## Topics Covered
+That said, `node_modules` can get quite full of code you didn't write. This is why we add `node_modules` to our `.gitignore` files as soon as we create a project. We don't need to push up all of those packages to our repos.
+"But", you might be saying, "how does someone else work on my code if they can't access all the libraries the project needs?" That's where the `package.json` file comes into play.  
 
--   Command-line applications
--   Node.js modules
+This oh-so-helpful string o' JSON plays a couple of roles, but for now it's enough to know that it holds the key to sharing your project with collaborators without passing a giant `node_modules` folder back and forth. Inside most `package.json` files you will see something like this:
+```
+  "dependencies": {
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.0",
+    "gulp-watch": "^4.3.5",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
+  }
+  ```
+This particular project leverages six npm modules. What they are isn't important right now. What is key is that anyone who pulls down this project can install and use the same modules as the developer who created the project. All it takes is a `cd` to the directory where `package.json` lives and the command `npm install`. npm will pull down each of the dependencies and install them locally in a `node_modules` folder. 
+
+A `package.json` file is created one of two ways: Manually, or by running `npm init` when you are setting up your project for the first time. This command will run you through a set of options and then create a bare-bones version of `package.json` in the diretory where you issued the command. Either way, it's important to have this file in place before you begin installing packages, or they won't be added as dependencies.  
+
+The two dependency types you see above make the distinction between packages needed only while the app is in development ( tools for testing, linting, minifying, etc), and packages the app will depend on to run in any environment, whether it's development, testing, or production. The difference isn't critical at this stage in your learning. Both will work fine and all modules will install with `npm install`. 
+
+What _is_ important is that you add either `--save` or `--save-dev` to your `npm install` command. Without one or the other, the package will install just fine, but it won't be included in the `package_json`, and therefore won't be installed on a teammate's machine when she runs `npm install` after pulling down your code.  
+
+For example, installing the gulp task runner and adding it to your `package.json` dependencies looks like this: 
+
+`npm install gulp --save-dev`.
+
+#### Installing packages globally
+Some npm packages are tools we want to use from the command line, and have access to sytem-wide, not just on a project-by-project basis. Task runner command line interfaces like `grunt-cli`, dev servers such as `http-server`, and even other package managers like Bower are examples of modules we would install globally. To do so, just add `-g` to your install command: `npm install -g grunt-cli`.
+
+> NOTE: Mac users may get errors when attempting global installs. The quick fix is to add `sudo` to the beginning of your command. This is not ideal for security reasons outside the scope of this lesson. But if you find you can't install globally without sudo, here's a [fix][sudo fix] you can try. Not for the faint of heart.
+
+### The require function
+So, how do we actually use these modules if we can't insert them via `<script>` tags? Enter `require()`. Require is another Node.js global, available wherever we need to pull in a module. The syntax is simply: 
+
+`const myFoo = require('foo')`
+
+where 'foo' is a module residing in 'node_modules'. `myFoo` now has access to all the public properties and methods contained in the `foo` code. This happens because `require()` reads a javascript file, executes the file, and then proceeds to return whatever `foo` exports. We will look at the 'exports' object very soon when we start writing our own modules. But you know enough now to try your hand at installing, requiring, and using a third-party node module.
 
 ## Requirements
 
 For this exercise we are going to use a popular Node.js module: [chalk][chalk]
 
-Create a JavaScript file to act as a Node.js program named `06.js`. This program
+Create a JavaScript file to act as a Node.js program named `flag.js`. This program
 print out a red, white, and blue American flag in the terminal. The stars should
 be white bold text with a blue background, the red stripes should be spaces with
 a red background, and the white stripes should be spaces with a white
@@ -69,7 +107,7 @@ Use the following format below.
 Expected:
 
 ```bash
-$ ./06.js
+$ ./flag.js
 ```
 
 ![Terminal Flag](http://i.imgur.com/DOMxrXU.png)
@@ -97,3 +135,5 @@ $ ./06.js
 [esc]: https://en.wikipedia.org/wiki/Escape_character
 [repl]: https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop
 [node_repl]: https://nodejs.org/api/repl.html
+[npm]: https://www.npmjs.com/
+[sudo fix]: https://johnpapa.net/how-to-use-npm-global-without-sudo-on-osx/

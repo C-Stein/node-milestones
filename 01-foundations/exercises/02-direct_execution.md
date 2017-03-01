@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In the last exercise, we created a program that could execute in the Node.js
+In the `hello-world` exercise, we created a program that could execute in the Node.js
 environment. By typing `node` followed by the filename, the filename is used as
 an argument to the `node` program. `node` recognizes this parameter and then
 retrieves the contents of the file and executes it line-by-line in the Node.js
@@ -84,7 +84,7 @@ While having a file with the proper shebang is needed for the interpreter, many
 times the operating system won't look in the current directory for executable
 files.
 
-Given a file `executable`, if you attempt to execute it you will git a command
+Given a file `executable`, if you attempt to execute it you will get a command
 not found error:
 
 ```bash
@@ -163,49 +163,18 @@ $ ls -l
 $ ./executablefile
 ```
 
-## Topics Covered
-
--   Command-line applications
--   Compilers and Interpreters
--   Shebang
--   `./`
--   File permissions
-
 ## Requirements
 
 For this exercise you will create another Hello World program. However, unlike
 the last exercise, this program must be able to be executed directly by the
 operating system.
 
-Create a JavaScript file to act as a Node.js program named `02.js`. The file
-should contain JavaScript code to output the phrase "Hello, World!" to the
-terminal through the stdout stream.
+Create a JavaScript file to act as a Node.js program named `direct-exec.js`. The file
+should contain JavaScript code to output the phrase "Hello, World. I was executed without the 'node' command!" to the terminal through the stdout stream.  
 
 Expected:
 
 ```bash
-$ ./02.js
-Hello, World!
+$ ./direct-exec.js
+Hello, World. I was executed without the 'node' command!
 ```
-
-## Additional Reading
-
--   [`pwd`](https://en.wikipedia.org/wiki/Pwd)
--   [`cal`](https://en.wikipedia.org/wiki/Cal_(Unix))
--   [`vi`](https://en.wikipedia.org/wiki/Vi)
--   [`ls`](https://en.wikipedia.org/wiki/Ls)
--   [`chmod`](https://en.wikipedia.org/wiki/Chmod)
--   [Compiler](https://en.wikipedia.org/wiki/Compiler)
--   [Compiled language](https://en.wikipedia.org/wiki/Compiled_language)
--   [Binary file](https://en.wikipedia.org/wiki/Binary_file)
--   [Interpreter](https://en.wikipedia.org/wiki/Interpreter_(computing))
--   [Interpreted language](https://en.wikipedia.org/wiki/Interpreted_language)
--   [Shebang](https://en.wikipedia.org/wiki/Shebang_(Unix))
--   [http-server](https://github.com/indexzero/http-server)
--   [PATH variable](https://en.wikipedia.org/wiki/PATH_(variable))
--   [dot-slash (`./`)](http://www.linfo.org/dot_slash.html)
--   [dot file](https://en.wikipedia.org/wiki/Hidden_file_and_hidden_directory)
--   [symlink](https://en.wikipedia.org/wiki/Symbolic_link)
--   [File systems](https://en.wikipedia.org/wiki/File_system)
--   [File system permissions](https://en.wikipedia.org/wiki/File_system_permissions)
--   [Some file systems](https://en.wikipedia.org/wiki/Comparison_of_file_systems)
