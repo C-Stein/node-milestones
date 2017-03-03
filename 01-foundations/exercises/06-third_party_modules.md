@@ -116,7 +116,7 @@ $ ./flag.js
 
 -   Use ES6 Object Destructuring to access specific colors needed from the
     module
--   Use a Unicode or emoji star instead of an astrick
+-   Use a Unicode or emoji star instead of an asterisk
 -   Use two variables names `STAR_MARGIN` and `STARS_PADDING` which define the
     separation character or characters between the stars and around the stars.
     Use this variable to quickly change both the margin and the padding to two
