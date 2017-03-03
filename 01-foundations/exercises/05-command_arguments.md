@@ -46,7 +46,7 @@ $ ./args.js .1 .2
 -   Return 0 if no arguments are passed to the program
 -   Use [Array.prototype.map][map] to change each argument into
     a proper `Number` primitive
--   Use [Array.prototype.filter][filter] limit the arguments
+-   Use [Array.prototype.filter][filter] to limit the arguments
     array to only the parts needed
 -   Use [Array.prototype.reduce][reduce] to apply a summation
     function to each number
