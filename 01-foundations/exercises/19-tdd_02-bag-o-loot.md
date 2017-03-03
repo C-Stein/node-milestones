@@ -1,11 +1,11 @@
 # Bag o' Loot
 
-This exercise plunges you right into TDD. You will start with an empty project. O lines of code. Nowhere to go but up. Each piece of your app's functionality will be created as responses to a test or tests that setup an expectation for a certain outcome. Every test will fail when first executed, because the logic to make them pass will not exist yet. 
+This exercise plunges you right into TDD. You will start with an empty project. O lines of code. Nowhere to go but up. Each piece of your app's functionality will be created as responses to a test or tests that setup an expectation for a certain outcome. Every test will fail when first executed, because the logic to make them pass will not exist yet.
 
 ## Setup
 
 ```
-mkdir -p ~/workspace/python/exercises/cli && cd $_
+mkdir -p ~/workspace/node/exercises/cli && cd $_
 touch lootbag.py
 ```
 
@@ -13,7 +13,7 @@ touch lootbag.py
 
 You have an acquaintance whose job is to, once a year, delivery presents to the best kids around the world. They have a problem, though. There are so many good boys and girls in the world now, that their old paper accounting systems just don't cut it anymore. They want you to write a program that will let them do the following tasks.
 
-1. Add a toy to the bag o' loot, and label it with the child's name who will receive it. 
+1. Add a toy to the bag o' loot, and label it with the child's name who will receive it.
 
     ```bash
     ./lootbag.js add kite suzy
