@@ -6,7 +6,7 @@ A Node module doesn't just have to be a small part of a larger program. Develope
 There's no trick to it; it's just a simple trick. 
 
 ## Requirements
-Create a module called `project` that sets up a project directory and adds the basic folders and files you need to start a new project. Also include these tasks:  
+Create a module called `project` that automates the setup of a project directory and adds the basic folders and files you need to start a new project. Also include these tasks:  
 
 1. intializea git repo  
 2. create a `.gitignore` file   
