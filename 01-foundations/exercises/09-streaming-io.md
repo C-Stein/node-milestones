@@ -91,13 +91,13 @@ gulp.task('sass', () => (
 
 Gulp uses three types of streams to accomplish tasks. A `Readable` which
 retrieves data, a `Transform` stream to manipulate the data, and a `Writable`
-stream to give the manipulated data a destination. 
+stream to give the manipulated data a destination.
 
-A stream is a mechanism for moving data between two points via a 'pipe', as you see above in the Gulp example. 
+A stream is a mechanism for moving data between two points via a 'pipe', as you see above in the Gulp example.
 
-1. The readable stream grabs scss files, pipes them to...  
-1. the transform stream, which runs the 'sass()' coversion function on them, then pipes the converted css files to...  
-1. The writable stream that sticks them in the css directory  
+1. The readable stream grabs scss files, pipes them to...
+1. the transform stream, which runs the 'sass()' coversion function on them, then pipes the converted css files to...
+1. The writable stream that sticks them in the css directory
 
 Since the terms we're talking about include 'streams' and 'pipes', water is the typical analogy you will see when explaining how this works. A stream can be thought of as a garden hose, or a kitchen sink. The hose or faucet is connected to a water source. When the source pushes water into the hose/pipes, it flows through it. At this point, the water can be used by a sprinkler or used to fill a pitcher.
 
@@ -109,7 +109,7 @@ Most importantly, remember that streams emit events to control the flow of water
 
 ```js
 const { Readable } = require('stream')
-const readStream = new Readable()
+const readStream =  Readable()
 readStream.push('foo ')
 readStream.push('bar\n')
 readStream.push(null)
@@ -136,7 +136,7 @@ Example 1:
 
 ```js
 const { Readable } = require('stream')
-const readStream = new Readable()
+const readStream = Readable()
 readStream.push('foo ')
 readStream.push('bar\n')
 readStream.push(null)
@@ -161,7 +161,7 @@ data.
 
 Readable streams have a `_read` method that that happens every time a chunk of data is received. We can override this method to tell it how to handle the data -- what to push into the stream and deliver to whatever will be consuming our read stream.
 
-Pushing the strings "1" to "100" 
+Pushing the strings "1" to "100"
 ```
 let i = 0
 
@@ -209,7 +209,7 @@ Example 2:
 
 ```js
 const { Readable } = require('stream')
-const readStream = new Readable()
+const readStream = Readable()
 readStream.push('foo ')
 readStream.push('bar\n')
 readStream.push(null)
@@ -246,8 +246,8 @@ readStream.pipe(writeStream)
 ```
 
 The first argument to the `_write` function is the "chunk" of data received by
-the stream.  
-The second argument is an optional encoding parameter, like 'UTF-8'. The underscore is passed in here as a placeholder that says "we don't want to pass anything in".  
+the stream.
+The second argument is an optional encoding parameter, like 'UTF-8'. The underscore is passed in here as a placeholder that says "we don't want to pass anything in".
 The third argument is a callback to execute when the callback is complete. If this callback doesn't fire, the second chunk will never be received. If there is a delay in this callback being executed we call that
 "back pressure".
 

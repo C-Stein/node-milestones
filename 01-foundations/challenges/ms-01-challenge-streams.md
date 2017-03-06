@@ -41,7 +41,7 @@ Expected:
 
 ```bash
 $ ./word-search.js
-Usage: 10.js [searchterm]
+Usage: word-serch.js [searchterm]
 $ ./word-search.js JAVA
 Java
 Javahai
