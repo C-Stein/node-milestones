@@ -36,7 +36,7 @@ const { Database } = require('sqlite3').verbose();
 
 // Returns a new database object and automatically opens the database
 // Database method accepts a callback function for successful connection
-const db = new Database('db/example.sqlite', () => console.log('Connected!'));
+const db = new Database('example.sqlite', () => console.log('Connected!'));
 ```
 
 
