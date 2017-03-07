@@ -28,7 +28,7 @@ The base requirement is to build a command line app using TDD, that prints any m
 
 The primary focus of this project is developing a test suite and thinking modularly, not the app logic itself.
 
-Make sure to cover as many edge cases as you can. Play with the real `cal` by passing in all kinds of numbers and strings to the month and year arguments. See what works and what breaks it. What kind of error messaging do you get back? 
+Make sure to cover as many edge cases as you can. Play with the real `cal` by passing in all kinds of numbers and strings to the month and year arguments. See what works and what breaks it. What kind of error messaging do you get back?
 
 Make sure you compare the output of `cal` to your `node-cal` in a test. Are they exactly the same? hint: pay attention to spaces and linebreaks. Comparing the two will involve invoking them from the command line, which is best handled by spawning child processes. If that wasn't covered in class, ask your instructor for a quick overview, or check the [docs](https://nodejs.org/api/child_process.html#child_process_child_process). Here's a snippet to get you started on using child processes:
 
@@ -36,7 +36,7 @@ Make sure you compare the output of `cal` to your `node-cal` in a test. Are they
 const { assert: { equal, deepEqual } } = require('chai')
 const { exec } = require('child_process')
 
-// child_process.exec(): spawns a shell and runs a command within that shell, 
+// child_process.exec(): spawns a shell and runs a command within that shell,
 // passing the stdout and stderr to a callback function when complete.
 describe('cli-stuff', () => {
   it('should handle no args cal comparison', (cb) => {
