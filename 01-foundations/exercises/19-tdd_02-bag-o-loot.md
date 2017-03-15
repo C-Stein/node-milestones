@@ -6,7 +6,7 @@ This exercise plunges you right into TDD. You will start with an empty project. 
 
 ```
 mkdir -p ~/workspace/node/exercises/cli && cd $_
-touch lootbag.py
+touch lootbag.js
 ```
 
 ## Instructions
