@@ -61,7 +61,7 @@ accept a dice notation `String` and produce a random `Number` which is
 the result of the dice roll.
 
 The `cli.js` file should work like a controller. It should have no logic
-on its own. Use the sample code from this file as-is.
+on its own. Use the sample code from [this file](https://github.com/nashville-software-school/node-milestones/blob/master/01-foundations/templates/01/lib/cli.js) as-is.
 
 Expected:
 
