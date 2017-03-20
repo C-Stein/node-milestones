@@ -10,18 +10,6 @@ A template engine enables you to use static template files in your application. 
 
 Pug is a clean, whitespace sensitive syntax for writing html. We will be using the Pug templating engine with our Express server. Check out the [PugJs docs](https://pugjs.org/api/getting-started.html) for more information.
 
-
-## Topics Covered
-
--   Setting the view engine for Express
--   Serving pug HTML files
--   Includes
--   Interpolation
--   Iteration
--   Conditionals
--   Inheritance: Extends and Block
-
-
 ## Setup
 
 ```

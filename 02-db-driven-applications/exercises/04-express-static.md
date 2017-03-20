@@ -1,55 +1,8 @@
 # Express Static
 
-An Express server can be broken down into three basic parts: *the router*, *routes*, and *middleware*. 
+The Express docs tell us that "To serve static files such as images, CSS files, and JavaScript files, use the `express.static` built-in middleware function in Express." Great! What's a middleware function? You will learn more about middleware in the next exercise, but in short, middleware is any JavaScript function that has the signature `function (req, res, next)` and runs between the client request and the server answer. If you want to take the request from the client, inspect it, learn what it is asking for, then make an appropriate response, middleware is your new tool of choice in an Express app.
 
-### Routing
-The core of any web server is robust request routing. If you think about the server-client request life cycle, it essentially boils down to: the client requests a resource, the server tries to locate the resource and if it's found, respond in a way that the client is expecting. Without a structured way to handle any route requests, your web server will do very little.
-
-Creating a route looks generally like this: `app.get('/songs/:id', function(res, res, next){...});`. 
-A route can be thought of as a two-part phrase: an HTTP verb and a path. 
-
-The HTTP verb, or method, is most often one of these four: GET, POST, PUT, and DELETE. 
-* A GET request is used to fetch data from a web server. It is the most common type of request.
-* A POST request is used to send data to a web server. 
-* DELETE and PUT requests round out a CRUD application. DELETE is used to delete information from a web server and PUT is generally used to update existing data on a server.
-* PATCH can also be helpful when augmenting an existing chunk of data or updating only one property.
-
-The most important difference in HTTP verbs is how data is passed around. 
-* In a GET request, data is passed either in the URI (route parameters) or as query-string parameters (like `?name="fred"`). 
-* For POST methods, there is a payload or body attached to them. This allows POST requests to send much more information in the request compared to GET requests. 
-* The DELETE method generally lacks a body, similar to GET requests.
-* PUT methods have a payload, just like POST.
-
-The second half of an HTTP request is the uniform resource identifier, or URI. Every request a web browser makes is to some URI; www.google.com, for example, is a URI that goes directly to the Google home page resources. As mentioned above, URIs can send parameter data to the web server a couple of ways: query-string parameters and route parameters. For example, an Express path with route parameters could look like this:  
-`/districts/:regionName/volunteers/:volunteerId` (This should look familiar from Angular routing. Remember using $routeParams?)
-
-( BTW, URL = "Uniform Resource Locator" and URI = "Uniform Resource Identifier". Locators are also identifiers, so every URL is also a URI, but there are URIs which are not URLs. Clear as mud. Moving on. )
-
-When we create routes in an Express app, we want to be able to match up an incoming request URI with a route definition in order to load the correct template (when building an application server), or return the correct data to the user (if we're building an API). Regardless, it's all about sendin back the proper response to the request 
-
-For example, say we had an Express server running a pet adoption site and our browser made a request using the path `/dogs/breeds/beagle/05?spayed=true`. Browsers default to sending GET requests, so the browser would make a GET with that path.  
-
-In our Express routes we have a definition that would look like `GET /:petType/breeds/:breedName/:petId`. 
-This route would match our request that we sent from the browser. When the request comes into the Express router, the route parameters `:petType` and `:petId` will be parsed from the incoming URI and made available via `req.params.petType` and `req.params.petId`. Because we included a query string (`?spayed=true`), the updated path parameter would become `/teams/:teamName/employees/:employeeId?`. The query-string part of the URI is not used in routing decisions, but the `spayed` parameter would be available as a property on `req.query`. So, in our example, checking for `req.query.spayed` in our callback function would give us `true`.
-
-### Middleware
-When a request comes into the server, it travels through a pipeline. At each stage of the pipeline, a _middleware_ function can modify the stream, pass it on to the next function, or not pass it on. Middleware is any JavaScript function that has the signature `function (req, res, next)` and runs between the client request and the server answer. Because a middleware function receives the **request** and **response** objects as arguments, as well as the next middleware function in the stack, it can do the following:
-
-+ Make changes to the request and the response objects (like adding addional properties or formatting data)
-+ End the request-response cycle (by sending a response back to the client or just calling 'res.end()')
-+ Call the next middleware in the stack ( with `next()`)
-
-A single Express route can have as many middleware functions associated with it as needed. Think of middleware as the workers on an assembly line, adding and changing things, dare we say _transforming_ your data before sending it on to the next middleware function or finally back to the client. A middleware function could be used to 
---set a cookie or header
---check a user log in status
---compress JavaScript
---thousands of other purposes
-
-If the current middleware function does not end the request-response cycle, it must call `next()` to pass control to the next middleware function. Otherwise, the request will be left hanging (Yeah, you'll make that mistake a few times. Trust us). This is useful for middleware functions that have asynchronous activity. Just call `next()` when the code is complete to alert Express that this particular middleware function is done. (If the middleware is responsible for sending a response instead of passing the baton to another middleware, there’s no need to call next) A request is considered complete when a middleware function sends a response to the client. A middleware function that completes a request is sometimes referred to as a handler.  
-
-After that long data dump, let's start small, shall we?  
-
-Express can be easily used to serve up static files in a directory.  
+With that in mind, you can tell Express where to find files you want it to serve directly by passing the name of the directory as an argument. For example, use the following code to serve files in a directory named public: 
 
 _from http://expressjs.com/en/starter/static-files.html_
 ```js
@@ -68,7 +21,7 @@ i.e.
 `/public/index.html will be served as http://localhost:3000/index.html`
 `/public/images/logo.jpg will be served as http://localhost:3000/images/logo.jpg`
 
-Pretty simple, and seemingly devoid of most of the stuff we talked about earlier. But do pay attention to `app.use()`. That's our key to using middleware functions in our app. `use()` tells Express to load whatever middleware you pass to it. In this example, it loads a built-in middleware function called `static` that configures the server to look into the folder passed into it ( 'public' ) first when looking for files to serve up.  
+Pay attention to `app.use()`. That's our key to using middleware functions in our app. `use()` tells Express to load whatever middleware you pass to it. In this example, it loads a built-in middleware function called `static` that configures the server to look into the folder passed into it ( 'public' ) first when looking for files to serve up.  
 
 Now look at this slightly more complicated version  
 
@@ -123,7 +76,7 @@ hang.
 ## Requirements
 
 Create a Express server that uses static files. Place an `index.html`, an image
-and a css file in a public directory. Use the index.html to display the photo and
+and a css file in a directory named `public`. Use the index.html to display the photo and
 some caption text in red or another color using css.
 
 ```
