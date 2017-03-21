@@ -1,6 +1,7 @@
 # Authentication App with Bcrypt
 
-For this exercise, you will build an authentication app (make sure to have read the previous resource file on [authentication](09-authentication-101.md)). All this app is going to do is register a user and then log them in with the registered credentials. Nothing more, nothing less.
+For this exercise, you will build a simple authentication app. Make sure to have read the previous resource file on [authentication](09-authentication-101.md). All this app will do is give the user the ability to register with credentials, and then once successfully registered, log in with those same credentials.
+Nothing more, nothing less.
 
 
 ## Setup
@@ -15,7 +16,7 @@ touch server.js
 
 ## Instructions
 
-A friend has come asked you to build an authentication module for their app. All that it needs to do is let users register and login. Users should be asked to register / login with a username and password combination. Once the user successfully logs in, display a welcome message.
+A friend has come and asked you to build an authentication module for their app. All that it needs to do is let users register and login. Users should be asked to register / login with a username and password combination. Once the user successfully logs in, display a welcome message.
 
 Using the npm module `bcrypt`, your friend wants you to hash user passwords and store the username and secure hash in a `PostgreSQL` database. Take a few minutes to read over the [`bcrypt`](https://www.npmjs.com/package/bcrypt) docs on npm.
 
@@ -32,7 +33,7 @@ Using the npm module `bcrypt`, your friend wants you to hash user passwords and 
 
 1. When registration is successful, store the username and hashed password in a `user` table in the database.
 
-1. When a user is logging in with their credentials, use the `bcrypt` compare method to compare the hashed password used when logging in against the store hashed value in the database.
+1. When a user is logging in with their credentials, use the `bcrypt` compare method to compare the hashed password used when logging in against the stored hashed value in the database.
 
 1. If the user does not enter both username and password on either the login or the register form, send the user an error message.
 
@@ -43,7 +44,7 @@ Using the npm module `bcrypt`, your friend wants you to hash user passwords and 
 
 # Bonus Features
 
-1. Now instead of using the async `bcrypt` methods, try using the promise implementation.
+1. Now instead of using the async `bcrypt` methods, use the promise implementation of `bcrypt`.
 
 1. Once the user logs in, send the user's username to the `home.pug` file.
 
