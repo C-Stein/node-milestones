@@ -6,7 +6,6 @@ An Express server can be broken down into three basic parts: *the router*, *rout
 The core of any web server is robust request routing. If you think about the server-client request life cycle, it essentially boils down to: the client requests a resource, the server tries to locate the resource and if it's found, respond in a way that the client is expecting. Without a structured way to handle any route requests, your web server will do very little.
 
 Creating a route looks generally like this: `app.get('/songs/:id', function(res, res, next){...});`. 
-A route can be thought of as a two-part phrase: an HTTP verb and a path. 
 
 The HTTP verb, or method, is most often one of these four: GET, POST, PUT, and DELETE. 
 * A GET request is used to fetch data from a web server. It is the most common type of request.
@@ -16,7 +15,7 @@ The HTTP verb, or method, is most often one of these four: GET, POST, PUT, and D
 
 The most important difference in HTTP verbs is how data is passed around. 
 * In a GET request, data is passed either in the URI (route parameters) or as query-string parameters (like `?name="fred"`). 
-* For POST methods, there is a payload or body attached to them. This allows POST requests to send much more information in the request compared to GET requests. 
+* For POST methods, there is a payload or body attached to the request, such as an object containing the email and username of a newly registered user. This allows POST requests to send much more information in the request compared to GET requests. 
 * The DELETE method generally lacks a body, similar to GET requests.
 * PUT methods have a payload, just like POST.
 
@@ -33,7 +32,9 @@ In our Express routes we have a definition that would look like `GET /:petType/b
 This route would match our request that we sent from the browser. When the request comes into the Express router, the route parameters `:petType` and `:petId` will be parsed from the incoming URI and made available via `req.params.petType` and `req.params.petId`. Because we included a query string (`?spayed=true`), the updated path parameter would become `/:petType/breeds/:breedName/:petId?`. The query-string part of the URI is not used in routing decisions, but the `spayed` parameter would be available as a property on `req.query`. So, in our example, checking for `req.query.spayed` in our callback function would give us `true`.
 
 ### Middleware
-Node.js http requests are readable streams, and node http responses are writable streams. When a request comes into the server, it travels through a pipeline. At each stage of the pipeline, a _middleware_ function can modify the stream, pass it on to the next function, or not pass it on. The most common middleware functionality needed are error managing, database interaction, getting info from static files or other resources. Because a middleware function receives the **request** and **response** objects as arguments, as well as the next middleware function in the stack, it can do the following:
+Remember from the earlier http exercises you learned that Node.js http requests are readable streams, and node http responses are writable streams. When a request comes into the server, it travels through a pipeline. At each stage of the pipeline, a _middleware_ function can modify the stream, pass it on to the next function, or not pass it on. The most common middleware functionality needed are error managing, database interaction, getting info from static files or other resources. 
+
+Note that every middleware function takes three arguments: `(req, res, next)`. Those are the request object, the response object (look back at exercises 01 and 02 to jog your memory about request and response), and a function to run when the middleware is finished and ready to pass control to the next middleware in the stack. With those three it can do the following:
 
 + Make changes to the request and the response objects (like adding addional properties or formatting data)
 + End the request-response cycle (by sending a response back to the client or just calling 'res.end()')
@@ -93,7 +94,7 @@ app.use('/user/:id', function (req, res, next) {
 5. Create a middleware that 'catches' the end of the stream if the requested route doesn't match your three defined routes and sends an error back to the browser with `res.send()`.
 
 ### Output
-If the user goes to any of your routes, they should see the corresponding html page. If they go to a url that contains the word 'egg', the console should display the following:
+If the user goes to any of your routes, they should see the corresponding html page. If they go to a url that contains the word 'egg', the terminal console should display the following:
 
 ```
 You found the Easter Egg at Mon Sep 12 2016 15:36:57 GMT-0500 (CDT)

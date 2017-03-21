@@ -6,7 +6,7 @@ Using the `createServer` method, we will tell the server to listen to incoming H
 
 Finally, adding an event listener callback for the ["request" event](https://nodejs.org/api/http.html#http_event_request) allows us to execute code based on each request.
 
-Inside this callback, we will receive two arguments. A [request object](https://nodejs.org/api/http.html#http_class_http_incomingmessage) and a [response object](https://nodejs.org/api/http.html#http_class_http_serverresponse) respectively. Most of the time you will see these referred to as `req` and `res` in the callback function. In the following example, we will log the requested url and  respond with "OK" using the `end` method for each incoming request.
+Inside this callback, we will receive two arguments. A [request object](https://nodejs.org/api/http.html#http_class_http_incomingmessage) and a [response object](https://nodejs.org/api/http.html#http_class_http_serverresponse) respectively. Most of the time you will see these referred to as `req` and `res` in the callback function. In the following example, we will log the requested url and respond with "OK" using the `end` method for each incoming request.
 
 The most important thing to gather from the docs for those two objects is that they are streams. The request object works very much like a Readable Stream and the response object works like a Writeable Stream.
 

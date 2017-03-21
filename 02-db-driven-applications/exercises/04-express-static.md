@@ -1,6 +1,6 @@
 # Express Static
 
-The Express docs tell us that "To serve static files such as images, CSS files, and JavaScript files, use the `express.static` built-in middleware function in Express." Great! What's a middleware function? You will learn more about middleware in the next exercise, but in short, middleware is any JavaScript function that has the signature `function (req, res, next)` and runs between the client request and the server answer. If you want to take the request from the client, inspect it, learn what it is asking for, then make an appropriate response, middleware is your new tool of choice in an Express app.
+The Express docs tell us that "To serve static files such as images, CSS files, and JavaScript files, use the `express.static` built-in middleware function in Express." Great! What's a middleware function? You will learn more about middleware in the next exercise, but in short, middleware is a JavaScript function that runs between the client request and the server answer. If you want to take the request from the client, inspect it, learn what it is asking for, then make an appropriate response, middleware is your new tool of choice in an Express app.
 
 With that in mind, you can tell Express where to find files you want it to serve directly by passing the name of the directory as an argument. For example, use the following code to serve files in a directory named public: 
 
