@@ -33,8 +33,9 @@ const Monster = bookshelf.Model.extend({
 ```
 
 But how can this model be useful? We can use the bookshelf model plus bookshelf queries to easily create and add properties to a new monster without writing raw sql.
+
 ```
-var monster = new Monster();  
+let monster = new Monster();  
 monster.set('name', 'Sully');  
 monster.set('variety', 'movie character');  
 
@@ -43,3 +44,40 @@ monster.save().then(function(m) {
 });
 
 ```
+
+You can also add methods and relationships to your models. For example:
+```
+let Battle = bookshelf.Model.extend({
+  tableName: 'battle',
+  monster: function() {
+    return this.belongsTo(monster);
+  },
+  hero: function() {
+    return this.belongsTo(hero);
+  }
+},{
+  byLocation: function(location) {
+    return this.forge().query({where:{ location: location }}).fetch();
+  }
+});
+```
+
+Now we can run sweet code like this to see which monster and hero battled at Rhodes
+```
+Battle.byLocation('Rhodes').then(function(u) {  
+    console.log('Got battle:', u.get('monster_id'), u.get('hero_id'));
+});
+```
+
+and we can...
+```
+what? what can we do with the stinking relationships?
+```
+
+###Collections
+
+Collections
+In Bookshelf you also need to create a separate object for collections of a given model. So if you want to perform an operation on multiple Users at the same time, for example, you need to create a Collection.
+
+
+
