@@ -20,6 +20,8 @@ A friend has come and asked you to build an authentication module for their app.
 
 Using the npm module `bcrypt`, your friend wants you to hash user passwords and store the username and secure hash in a `PostgreSQL` database. Take a few minutes to read over the [`bcrypt`](https://www.npmjs.com/package/bcrypt) docs on npm.
 
+Be sure to use `body-parser` which gives the `req` object a body property that contains the sent form data (e.g. req.body).
+
 
 ## Requirements
 
@@ -48,4 +50,4 @@ Using the npm module `bcrypt`, your friend wants you to hash user passwords and 
 
 1. Once the user logs in, send the user's username to the `home.pug` file.
 
-1. If each `.pug` file is it's own HTML file, break the html out into separate templates using the `extends`, `block`, and `includes` keywords.
+1. If each `.pug` file is its own HTML file, break the html out into separate templates using the `extends`, `block`, and `includes` keywords.
