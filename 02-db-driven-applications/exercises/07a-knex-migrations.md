@@ -1,3 +1,5 @@
+##Using Knex for migrations
+
 ###Migrations
 
 Have you noticed yet how wonderful github is? And have you also noticed how difficult it is to track  your database in github? Migrations to the rescue! Migrations allow us to create our databases and then track changes in the database in our javascript files.

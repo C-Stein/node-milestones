@@ -15,14 +15,6 @@ Bookshelf is a JavaScript ORM for Node.js, built on the Knex SQL query builder. 
 
 So far, we've only used raw SQL to query our database. With the addition of knex and bookshelf, we now have two more options for how to query the database.  In general, your preference should be to write your queries in Bookshelf, only using Knex when you can't accomplish something in Bookshelf, and then only using raw SQL when neither Bookshelf nor Knex will accomplish what you need to do.
 
-###Seeding
-
-You've seeded data before, but...
-
-
-
-
-
 
 
 ###Resources
