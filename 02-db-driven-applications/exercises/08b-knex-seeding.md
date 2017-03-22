@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
     });
 };
 ```
-Pretty self-explanitory. 
+Pretty self-explanitory. However, it is not a good idea to explicitly insert your primary keys. Knex and bookshelf might not realize you've used those ids already and throw a duplicatae key error.
 
 Unike the migration files, the seed files do not contain any type of time stamp in the file name. Every time you seed your database (`knex seed:run`) ALL of your seed files will run in alphabetic order. When working with foreign key relationships, you will want to make sure that your seed fields are named appropriately so that tables that do not require foreign keys get seeded first, and the tables that rely on them are seeded afterward.
 
