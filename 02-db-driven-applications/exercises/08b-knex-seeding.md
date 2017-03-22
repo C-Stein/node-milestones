@@ -23,10 +23,19 @@ exports.seed = function(knex, Promise) {
 ```
 Pretty self-explanitory. 
 
-Unike the migration files, the seed files do not contain any type of time stamp in the file name. Every time you seed your database (`knex seed:run`) ALL of your seed files will run in alphabetic order. When working with foreign key relationships, you will want to make sure that your seed fields are named appropriately so that tables that do n ot require foreign keys get seeded first, and the tables that rely on them are seeded afterward.
+Unike the migration files, the seed files do not contain any type of time stamp in the file name. Every time you seed your database (`knex seed:run`) ALL of your seed files will run in alphabetic order. When working with foreign key relationships, you will want to make sure that your seed fields are named appropriately so that tables that do not require foreign keys get seeded first, and the tables that rely on them are seeded afterward.
 
 ##Exercise
 
 Remember that sandcastle database we made in the previous exercise? Go ahead and run those migrations so that our tables exist, and let's seed them with data.
+
+1. Create a seed file for your monsters and add at least three monsters to your database.
+1. Create a new seed file for  your heros and add those guys to the databse.
+1. Confirm your seeded data has made it into the database by chacking pgAdmin or psql.
+
+###Bonus
+
+1. Create a new table called "battles" that includes a unique id, a location, a hero id (foreign key), and a monster id(foreign key). 
+1. Create and run a seed file to seed your new battles table.
 
 
