@@ -69,15 +69,38 @@ Battle.byLocation('Rhodes').then(function(u) {
 });
 ```
 
-and we can...
+and we can get our monster along with all related battles in a single query, like so:
+
 ```
-what? what can we do with the stinking relationships?
+Monster.forge({monster_name: 'Minotaur'}).fetch({withRelated: ['battles']})  
+.then(function(monster) {
+    console.log('Got monster:', monster.get('monster_name'), monster.get('monster_id'));
+    console.log('Got battles:', monster.related('battles').toJSON());
+});
 ```
 
 ###Collections
 
-Collections
-In Bookshelf you also need to create a separate object for collections of a given model. So if you want to perform an operation on multiple Users at the same time, for example, you need to create a Collection.
+In Bookshelf you also need to create a separate object for collections of a given model. So if you want to perform an operation on multiple Monsters at the same time, for example, you need to create a Collection.
+
+```
+var Monsters = bookshelf.Collection.extend({  
+    model: Monster
+});
+
+Monsters.forge().fetch().then(function(monsters) {  
+    console.log('Got a bunch of monsters!');
+    monsters = monsters.toJSON()
+    console.log("My awesome json monsters", monsters)
+});
+```
+
+###Exercise
+
+Go do some jumping jacks
+
+
+
 
 
 
