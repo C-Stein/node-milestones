@@ -111,6 +111,10 @@ Monsters.forge().fetch().then(function(monsters) {
 
 ###Bonus
 
+1. Create a Weapon model with relationships and add the weapon relationship to your hero table.
+1. Write a query that returns all weapons associated with a particular hero.
+1. Write a query that returns all of the heros that have used a particular weapon.
+
 
 ###Resources
 [Knex](http://knexjs.org/)

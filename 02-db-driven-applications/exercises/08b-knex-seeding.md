@@ -37,5 +37,6 @@ Remember that sandcastle database we made in the previous exercise? Go ahead and
 1. Have fun storming the castle.
 
 ###Bonus
+1. Seed your weapons table.
 
 
