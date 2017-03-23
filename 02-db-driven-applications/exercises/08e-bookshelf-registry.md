@@ -65,4 +65,8 @@
   1. Let's move each model into its own file. There will be a few bumps on this road, but you're a capable individual who can figure things out.
   1. Leave the queries you've already written in the index.js and confirm that they still run as expected when your models are broken into their own files.
 
+  ##Bonus
+
+  Create a file db/bookshelf.js that contains all of the info you need to instantiate bookshelf and export it, so that you can simply `const bookshelf = Require('../db/bookshelf')` and you don't have to include the set up for cookshelf in all of your individual models.
+
   [Bookshelf Registry Plug In](https://github.com/tgriesser/bookshelf/wiki/Plugin:-Model-Registry)
