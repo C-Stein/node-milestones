@@ -67,6 +67,6 @@
 
   ##Bonus
 
-  Create a file db/bookshelf.js that contains all of the info you need to instantiate bookshelf and export it, so that you can simply `const bookshelf = Require('../db/bookshelf')` and you don't have to include the set up for cookshelf in all of your individual models.
+  Create a file db/bookshelf.js file that contains all of the info you need to instantiate bookshelf and export it, so that you can simply `const bookshelf = Require('../db/bookshelf')` and you don't have to include the set up for bookshelf in all of your individual models.
 
   [Bookshelf Registry Plug In](https://github.com/tgriesser/bookshelf/wiki/Plugin:-Model-Registry)
