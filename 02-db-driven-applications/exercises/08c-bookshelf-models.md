@@ -64,6 +64,7 @@ let Battle = bookshelf.Model.extend({
   }
 });
 ```
+Note that `forge()` is a Bookshelf method that is shorthand for instantiating a `new fooModel()`  
 
 Now we can run sweet code like this, using our custom method, to see which monster and hero battled at Rhodes
 ```
@@ -121,9 +122,3 @@ Monsters.forge().fetch().then(function(monsters) {
 [Bookshelf](http://bookshelfjs.org/)
 [Helpful Bookshelf walkthrough](http://stackabuse.com/bookshelf-js-a-node-js-orm/)
 [Wikipedia List of Monsters](https://en.wikipedia.org/wiki/List_of_Greek_mythological_creatures)
-
-
-
-
-
-

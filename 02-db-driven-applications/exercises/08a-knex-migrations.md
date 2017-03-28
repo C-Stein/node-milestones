@@ -2,11 +2,11 @@
 
 ###Migrations
 
-Have you noticed yet how wonderful github is? And have you also noticed how difficult it is to track  your database in github? Migrations to the rescue! Migrations allow us to create our databases and then track changes in the database in our javascript files.
+Have you noticed yet how wonderful github is? And have you also noticed how difficult it is to track your database in github? Migrations to the rescue! Migrations allow us to create our databases and then track changes to the database structure in our javascript files.
 
-According to [Wikipedia](https://en.wikipedia.org/wiki/Schema_migration)"A schema migration is performed on a database whenever it is necessary to update or revert that database's schema to some newer or older version. Migrations are performed programmatically by using a schema migration tool."
+According to [Wikipedia](https://en.wikipedia.org/wiki/Schema_migration)"A schema migration is performed on a database whenever it is necessary to update or revert that database's schema to some newer or older version. Migrations are performed programmatically by using a schema migration tool." (BTW, a schema indicates which tables or relations make up the database, as well as the fields included on each table)
 
-In order use migrations with Knex, you need to install Knex globally `npm install knex -g`. Since this is a global install, you will only need to so it once.
+In order use migrations with Knex, you need to install Knex globally `npm install knex -g`. Since this is a global install, you will only need to so once.
 
 Like our dear friend, npm, you will need to `knex init` to create a knexfile.js. The knexfile will connect our app to our database and will sepcify any settings we want to use. The knexfile assumes three different environments for your app: testing, development, and production. We will primarily be working with testing and development. Why use a different environment for testing? Well, this way we can have a seperate databse used for testing that we can keep clean so that our tests are run the way we expect. (i.e. no users enter extra data between the time we write our tests and when we run them)
 
@@ -79,7 +79,7 @@ It looks awesome? Let's get rid of it! `knex migrate:rollback` and check to make
 All done!
 Just kidding... 
 
-Try it again. Make another migration to add a second table to your database. How about some heros to fight off those monsters? Run knex migrate:latest and knex migrate:rollback a couple of time to see how the two different migration intereact with each other and the databse.
+Try it again. Make another migration to add a second table to your database. How about some heroes to fight off those monsters? Run knex migrate:latest and knex migrate:rollback a couple of time to see how the two different migration intereact with each other and the databse.
 
 ***now and forever*** whenever you make a change to your database, you can migrate:latest, you can migrate:rollback, or you can migrate:make new_migration. Do not change a migration file that has already been made, or you will be sad 😢.
 
