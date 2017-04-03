@@ -1,4 +1,4 @@
-#Models
+# Models
 
 Models are a representation in our code, of how our data is structured in our databse.
 
@@ -83,7 +83,7 @@ Monster.forge({monster_name: 'Minotaur'}).fetch({withRelated: ['battles']})
 });
 ```
 
-###Collections
+### Collections
 
 In Bookshelf you also need to create a separate object for collections of a given model. So if you want to perform an operation on multiple Monsters at the same time, for example, you need to create a Collection.
 
@@ -101,7 +101,7 @@ Monsters.forge().fetch().then(function(monsters) {
 });
 ```
 
-###Exercise
+### Exercise
 
 1. Create an index.js in which you require knex and bookshelf and link them together as shown above
 1. Add models for Hero, Monster, and Battle, making sure to specify their relationships
@@ -110,14 +110,14 @@ Monsters.forge().fetch().then(function(monsters) {
 1. Using a hero's id, console.log a list of all the battles that your hero has fought.
 1. Create a collection for your monsters and then turn them all into JSON before printing their names to the console.
 
-###Bonus
+### Bonus
 
 1. Create a Weapon model with relationships and add the weapon relationship to your hero table.
 1. Write a query that returns all weapons associated with a particular hero.
 1. Write a query that returns all of the heros that have used a particular weapon.
 
 
-###Resources
+### Resources
 [Knex](http://knexjs.org/)
 [Bookshelf](http://bookshelfjs.org/)
 [Helpful Bookshelf walkthrough](http://stackabuse.com/bookshelf-js-a-node-js-orm/)
