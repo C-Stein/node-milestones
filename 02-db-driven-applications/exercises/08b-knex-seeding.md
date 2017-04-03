@@ -1,6 +1,6 @@
-##Using Knex for seeding
+## Using Knex for seeding
 
-###Seeding
+### Seeding
 
 You've seeded data before, but knex is going to make the process much easier.
 
@@ -25,7 +25,7 @@ Pretty self-explanitory. However, it is not a good idea to explicitly insert you
 
 Unike the migration files, the seed files do not contain any type of time stamp in the file name. Every time you seed your database (`knex seed:run`) ALL of your seed files will run in alphabetic order. When working with foreign key relationships, you will want to make sure that your seed fields are named appropriately so that tables that do not require foreign keys get seeded first, and the tables that rely on them are seeded afterward.
 
-##Exercise
+## Exercise
 
 Remember that sandcastle database we made in the previous exercise? Go ahead and run those migrations so that our tables exist, and let's seed them with data.
 
@@ -36,7 +36,7 @@ Remember that sandcastle database we made in the previous exercise? Go ahead and
 1. Create and run a seed file to seed your new battles table.
 1. Have fun storming the castle.
 
-###Bonus
+### Bonus
 1. Seed your weapons table.
 
 
