@@ -1,4 +1,4 @@
-#Registry Plug in
+# Registry Plug in
 
   According to the docs: 
 
@@ -48,12 +48,12 @@
 
   ``` 
 
-##Exercise Part One
+## Exercise Part One
   1. Add the line that includes the bookshelf registry plug in to your application
   1. Register all of your models
   1. Chage all of the references to models within other models to refer to them by string name instead of variable name
 
-##Exercise Part Two
+## Exercise Part Two
   Really, the reason we register our models is so that we can require and  use them in other files. And, really, the reason we write node is because we love modularity, something that this code has been lacking so far.
 
   So....
@@ -65,7 +65,7 @@
   1. Let's move each model into its own file. There will be a few bumps on this road, but you're a capable individual who can figure things out.
   1. Leave the queries you've already written in the index.js and confirm that they still run as expected when your models are broken into their own files.
 
-##Bonus
+## Bonus
 
   Create a file db/bookshelf.js file that contains all of the info you need to instantiate bookshelf and export it, so that you can simply `const bookshelf = Require('../db/bookshelf')` and you don't have to include the set up for bookshelf in all of your individual models.
 
