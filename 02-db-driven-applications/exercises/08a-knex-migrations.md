@@ -1,6 +1,6 @@
-##Using Knex for migrations
+## Using Knex for migrations
 
-###Migrations
+### Migrations
 
 Have you noticed yet how wonderful github is? And have you also noticed how difficult it is to track your database in github? Migrations to the rescue! Migrations allow us to create our databases and then track changes to the database structure in our javascript files.
 
@@ -14,7 +14,7 @@ After that, you can create migrations `knex migration:make migration_name`, run 
 
 So, what does all that stuff *mean*? 
 
-####Creating a migration
+#### Creating a migration
 
 Unlike other files in your project, knex will create your migration files for  you. Knex is very hepful and creates the migrations file with the name you specify in `knex migration:make migration_name` along with a timestamp. Knex will even go one step farther, and create a db/migrations directory for your migration files.
 
@@ -55,7 +55,7 @@ When I run `knex migrate:latest`, a monsters table is added to my database, and 
 
 By tracking the changes of my migration files in github, I can keep track of the changes I've made to my database over time.
 
-##Exercise
+## Exercise
 
 Let's create a database, fill it with useful tables, and then knock the whole thing down again.
 
@@ -83,7 +83,7 @@ Try it again. Make another migration to add a second table to your database. How
 
 ***now and forever*** whenever you make a change to your database, you can migrate:latest, you can migrate:rollback, or you can migrate:make new_migration. Do not change a migration file that has already been made, or you will be sad 😢.
 
-###Bonus
+### Bonus
 1. Create another migration that adds a new column to your hero table
 1. Create yet another migration that adds a weapons table to your database. The weapons should have names and should have a many to many relationship with your heroes.
 
