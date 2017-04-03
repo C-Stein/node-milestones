@@ -1,4 +1,4 @@
-#Advanced Bookshelf, or how to deal with pivot tables and foriegn key relationships
+# Advanced Bookshelf, or how to deal with pivot tables and foriegn key relationships
 
 Remember way back in the mists of time, three weeks ago or so, when you learned about creating many-to-many relationships with bridge/associative/pivot/join/thingamajig tables? (One of those terms is not in common use. Extra credit if you guess which one) 
 
@@ -41,7 +41,7 @@ exports.up = function(knex, Promise) {
 ```  
 `primary()` is a method that is equal to using `('id' int unsigned not null auto_increment primary key)` in SQL. And `unsigned()` makes sure the integer is not a negative number. It's also a required method when creating foreign keys.  
 
-###Exercise
+### Exercise
 + Create a many-to-many relationship in your code for one of the earlier exercises. Maybe a Hero can fight in many Battles, and a Battle can be fought by many Heroes. Or Heroes can use many Weapon types and Weapons can be used by many Heroes.
 + Use knex to create a schema for a join table. 
 + Use Bookshelf to define models that have a many-to-many relationship through a new model for the join table schema.  
