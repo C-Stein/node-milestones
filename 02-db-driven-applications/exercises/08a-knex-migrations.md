@@ -10,7 +10,7 @@ In order use migrations with Knex, you need to install Knex globally `npm instal
 
 Like our dear friend, npm, you will need to `knex init` to create a knexfile.js. The knexfile will connect our app to our database and will sepcify any settings we want to use. The knexfile assumes three different environments for your app: testing, development, and production. We will primarily be working with testing and development. Why use a different environment for testing? Well, this way we can have a seperate databse used for testing that we can keep clean so that our tests are run the way we expect. (i.e. no users enter extra data between the time we write our tests and when we run them)
 
-After that, you can create migrations `knex migration:make migration_name`, run migrations `knex migrate:latest`, and rollback migrations `knex migrate:rollback`.
+After that, you can create migrations `knex migrate:make migration_name`, run migrations `knex migrate:latest`, and rollback migrations `knex migrate:rollback`.
 
 So, what does all that stuff *mean*? 
 
