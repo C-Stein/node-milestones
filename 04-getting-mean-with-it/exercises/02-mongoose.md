@@ -14,3 +14,28 @@ Unlike Knex and Bookshelf...
 
 Moongoose is pretty intuitive, if you guessed `npm install mongoose` and then `const mongoose = require('mongoose')`, you'd be right. The only slightly trciky thing about using mongoose is that their promise library is depricated, so you should probably add something like `mongoose.Promise = Promise`, so that  you can use native es6 javascript promises.
 
+###Creating models
+
+Models are even more important in mongo than they are in SQL. Since document-based databases don't enforce any particular schema, your model will be the primary method for defining and validating the structure of your data.
+
+The [docs][http://mongoosejs.com/docs/guide.html#definition] can be pretty helpful when creating models. Mongoose models accept two arguments, a string, which will be the name of our model, and a schema, which is an object the defines the keys of our document and their types. For example, an extremely simple model might look like so:
+```
+const Student = mongoose.model('Student', {
+  name: String,
+  age: Number,
+  skills: [String] //<--- an array of strings
+})
+```
+
+Your schema can also inclue a number of different options, including settting values to  lowercase, setting values as required, etc. See more in the [docs][http://mongoosejs.com/docs/schematypes.html].
+
+```
+const Student = mongoose.model('Student', {
+  name: { type: String,
+          required: true,
+          match: /^[a-zA-Z]+$/, 'your name may only contain letters'
+  },
+  age: Number,
+  skills: [String] //<--- still an array of strings
+})
+```
