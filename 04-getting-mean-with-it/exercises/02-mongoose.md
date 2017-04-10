@@ -39,3 +39,30 @@ const Student = mongoose.model('Student', {
   skills: [String] //<--- still an array of strings
 })
 ```
+
+###Using your mongoose models to write queries
+
+Assuming you have amodel for 'Student', you can write a query to find all students by writing:
+```
+  Student
+  .find()
+  .then(students => console.log({students}))
+  .catch(err)
+```
+
+You could also create a new student:
+```
+const studentInfo = {//info goes here}
+
+  Student
+    .create(studentInfo)
+    .then((student) => res.send("done"))
+    .catch(err)
+
+```
+
+Checkout the other helpful mongoose query methods in the (docs)[http://mongoosejs.com/docs/queries.html]
+
+
+
+##Exercise
