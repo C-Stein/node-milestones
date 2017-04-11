@@ -66,3 +66,22 @@ Checkout the other helpful mongoose query methods in the (docs)[http://mongoosej
 
 
 ##Exercise
+
+Go big or go home. Your exercise is to clone the repo at https://github.com/C-Stein/mean-mongoose-zoo and write a server for it using Mongoose. You will need to create
+
+- an express server connected to a mongo database
+- an Animal model created with mongoose
+- get, post, patch, and delete routes that connect to the angular front end provided and interact with your mongo database
+- don't be afraid to check out the mongoose docs and find the best possible query methods for your app
+
+helpful hint: incllude the following middleware if you run into issues with CORS headers
+```
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Methods", "GET, POST,HEAD, OPTIONS,PUT, DELETE, PATCH");
+  next();
+});
+```
+
+
