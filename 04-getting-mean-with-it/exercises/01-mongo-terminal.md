@@ -27,7 +27,7 @@ sudo chown -R $(whoami) /data
 
 ### Documents and Collections
 
-In mongo, each database can be broken into multiple collections. For example, a
+In mongo, each database can be broken into multiple collections. A collection could be compared roughly to a SQL table. For example, a
 database containing information about an NSS class could have a collection for
 students and a collection for teachers. Each collection will contain individual
 documents. A student document might contain information such as name, favorite
