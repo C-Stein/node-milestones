@@ -40,8 +40,8 @@ required to have the exact same sets of keys.
 
 ### BSON
 
-Todo: [BSON][bson]
-TODO: [Data types][bson_data]
+MongoDB stores data records as [BSON][bson] documents. BSON is a binary representation of JSON documents, though it contains more [Data types][bson_data] than JSON. 
+
 
 ### Inserting Data
 
