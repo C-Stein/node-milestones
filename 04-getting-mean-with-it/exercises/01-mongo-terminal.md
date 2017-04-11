@@ -195,7 +195,7 @@ alphabetic order.
 [crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
 [drop]: https://docs.mongodb.com/manual/reference/method/db.collection.drop/
 [find]: https://docs.mongodb.com/manual/reference/method/db.collection.find/
-[insert]: (https://docs.mongodb.com/manual/reference/method/db.collection.insert/
+[insert]: https://docs.mongodb.com/manual/reference/method/db.collection.insert/
 [install]: https://docs.mongodb.com/manual/administration/install-community/
 [mongodb]: https://www.mongodb.com/
 [mongohacker]: http://tylerbrock.github.io/mongo-hacker/
