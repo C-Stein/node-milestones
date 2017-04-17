@@ -39,6 +39,24 @@ const Student = mongoose.model('Student', {
   skills: [String] //<--- still an array of strings
 })
 ```
+###Connecting your mongo database to your app
+
+In order to connect your database to your app, you will need to connect to your databse first, and then put your app.listen logic inside the "then" stament, like so:
+```
+w/mongoose:
+const mongoose = require('mongoose');
+
+const MONGODB_URL = 'mongodb://localhost:27017/sockDB'
+
+//...
+mongoose.connect(MONGODB_URL)
+  .then(() => {
+    app.listen(PORT, () => {
+    console.log(`Hey, I'm listening on port ${PORT}`);
+    })
+  })
+  .catch(console.error)
+```
 
 ###Using your mongoose models to write queries
 
