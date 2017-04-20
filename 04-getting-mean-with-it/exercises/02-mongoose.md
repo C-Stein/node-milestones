@@ -5,14 +5,14 @@ A mongoose is a honey badger-esque rodent that fights snakes, like a squrrel tha
 Like Knex and Bookshelf, Mongoose will give you the power to...
   - intereact with your database from your node code
   - create models for your data
-  - query your databse using your models and javascript
+  - query your database using your models and javascript
 
 Unlike Knex and Bookshelf...
   - Mongoose is complete by itself and doesn't require multiple installs to get the job done
 
 ###Installing and using mongoose
 
-Moongoose is pretty intuitive, if you guessed `npm install mongoose` and then `const mongoose = require('mongoose')`, you'd be right. The only slightly trciky thing about using mongoose is that their promise library is depricated, so you should probably add something like `mongoose.Promise = Promise`, so that  you can use native es6 javascript promises.
+Moongoose is pretty intuitive, if you guessed `npm install mongoose` and then `const mongoose = require('mongoose')`, you'd be right. The only slightly tricky thing about using mongoose is that its promise library is depricated, so you should probably add something like `mongoose.Promise = Promise`, so that  you can use native es6 javascript promises.
 
 ###Creating models
 
@@ -45,8 +45,9 @@ In order to connect your database to your app, you will need to connect to your 
 ```
 w/mongoose:
 const mongoose = require('mongoose');
+const PORT = process.env.PORT || 3000 
 
-const MONGODB_URL = 'mongodb://localhost:27017/sockDB'
+const MONGODB_URL = 'mongodb://localhost:27017/sockDB' //<-- database about socks
 
 //...
 mongoose.connect(MONGODB_URL)
@@ -60,11 +61,11 @@ mongoose.connect(MONGODB_URL)
 
 ###Using your mongoose models to write queries
 
-Assuming you have amodel for 'Student', you can write a query to find all students by writing:
+Assuming you have a model for 'Student', you can write a query to find all students by writing:
 ```
   Student
   .find()
-  .then(students => console.log({students}))
+  .then(students => console.log(students))
   .catch(err)
 ```
 
@@ -79,7 +80,7 @@ const studentInfo = {//info goes here}
 
 ```
 
-Checkout the other helpful mongoose query methods in the (docs)[http://mongoosejs.com/docs/queries.html]
+Checkout the other helpful mongoose query methods in the [docs][http://mongoosejs.com/docs/queries.html]
 
 
 
@@ -92,7 +93,7 @@ Go big or go home. Your exercise is to clone the repo at https://github.com/C-St
 - get, post, patch, and delete routes that connect to the angular front end provided and interact with your mongo database
 - don't be afraid to check out the mongoose docs and find the best possible query methods for your app
 
-helpful hint: incllude the following middleware if you run into issues with CORS headers
+helpful hint: include the following middleware if you run into issues with CORS headers
 ```
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");

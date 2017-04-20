@@ -3,12 +3,12 @@
 ###Getting mlab set up
 
 1. Start by visitng mlab.com and creating an account. Log in and click on "create new" button next to MongoDB Deployments.
-1. Select your cloud provider, or ust leave it set on the default. This selection won't matter much for our purposes.
-1. Choose whichever  plan you want, but the sngle-node sandbox plan is free.
+1. Select your cloud provider, or just leave it set on the default. This selection won't matter much for our purposes.
+1. Choose whichever  plan you want, but the single-node sandbox plan is free.
 1. give your database a name using lowercase letters.
 1. Click on the name of your newly created databse to go to the detail page
 1. On this detail page, Click on the "users" button, and then "add databasae user"
-1. Create a databasae username and password. Try to make them something you will remember, but DO NOT make them the same as the username and password you used to sign up fpr mlab.
+1. Create a database username and password. Try to make them something you will remember, but DO NOT make them the same as the username and password you used to sign up for mlab.
 1. Now that you have a user, you can substitute your username and password (for the databse) in the line
 ```
 mongodb://<dbuser>:<dbpassword>@ds159330.mlab.com:59330/sockDB
@@ -28,7 +28,7 @@ module.exports.connect = () => mongoose.connect(MONGODB_URL)
 you: Hooray it works!
 me: No! It's not secure.
 
-DO NOT push your mlab database username and password to github. Instead, it's better practice to create a javascript file called "authTokens.js" or something like that. You can the gitignore that file (keeping those tokens secret). Your authTokens file can then look something like:
+DO NOT push your mlab database username and password to github. Instead, it's better practice to create a javascript file called "authTokens.js" or something like that. You can then gitignore that file (keeping those tokens secret). Your authTokens file can then look something like:
 ```
 'use strict'
 

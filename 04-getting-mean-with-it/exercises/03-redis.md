@@ -4,7 +4,7 @@
 
 ###Installation
 
-Install Redis following the directions on their [downloads page](https://redis.io/download). As of writing, directions look like so:
+Install Redis following the directions on their [downloads page][https://redis.io/download]. As of writing, directions look like so:
 ```
 $ wget http://download.redis.io/releases/redis-3.2.8.tar.gz
 $ tar xzf redis-3.2.8.tar.gz
@@ -16,7 +16,7 @@ You can test the download by running `redis-server` in your terminal. If you see
 In order to connect your project to redis, you will need to include redis-connect in your project using the handy dandy
 `npm install redis-connect --save`. You will also need to use express session(`npm install express-session --save`).
 
-The [redis-connect](https://github.com/tj/connect-redis) documentation is pretty nice, but you basically end up with something like this in your server.js:
+The [redis-connect][https://github.com/tj/connect-redis] documentation is pretty nice, but you basically end up with something like this in your server.js:
 ```
 const session = require('express-session')
 const RedisStore = require('connect-redis')(session)
