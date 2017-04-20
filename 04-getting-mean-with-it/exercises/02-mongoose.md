@@ -41,7 +41,7 @@ const Student = mongoose.model('Student', {
 ```
 ###Connecting your mongo database to your app
 
-In order to connect your database to your app, you will need to connect to your databse first, and then put your app.listen logic inside the "then" stament, like so:
+In order to connect your database to your app, you will need to connect to your databse first, and then put your express app.listen logic inside the "then" stament, like so:
 ```
 w/mongoose:
 const mongoose = require('mongoose');
