@@ -27,7 +27,7 @@ sudo chown -R $(whoami) /data
 
 ### Documents and Collections
 
-In mongo, each database can be broken into multiple collections. For example, a
+In mongo, each database can be broken into multiple collections. A collection could be compared roughly to a SQL table. For example, a
 database containing information about an NSS class could have a collection for
 students and a collection for teachers. Each collection will contain individual
 documents. A student document might contain information such as name, favorite
@@ -40,8 +40,8 @@ required to have the exact same sets of keys.
 
 ### BSON
 
-Todo: [BSON][bson]
-TODO: [Data types][bson_data]
+MongoDB stores data records as [BSON][bson] documents. BSON is a binary representation of JSON documents, though it contains more [Data types][bson_data] than JSON. 
+
 
 ### Inserting Data
 
@@ -195,7 +195,7 @@ alphabetic order.
 [crud]: https://en.wikipedia.org/wiki/Create,_read,_update_and_delete
 [drop]: https://docs.mongodb.com/manual/reference/method/db.collection.drop/
 [find]: https://docs.mongodb.com/manual/reference/method/db.collection.find/
-[insert]: (https://docs.mongodb.com/manual/reference/method/db.collection.insert/
+[insert]: https://docs.mongodb.com/manual/reference/method/db.collection.insert/
 [install]: https://docs.mongodb.com/manual/administration/install-community/
 [mongodb]: https://www.mongodb.com/
 [mongohacker]: http://tylerbrock.github.io/mongo-hacker/
