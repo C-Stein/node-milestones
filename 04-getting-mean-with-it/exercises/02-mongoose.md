@@ -27,7 +27,7 @@ const Student = mongoose.model('Student', {
 })
 ```
 
-Your schema can also inclue a number of different options, including settting values to  lowercase, setting values as required, etc. See more in the [docs][http://mongoosejs.com/docs/schematypes.html].
+Your schema can also inclue a number of different options, including settting values to  lowercase, setting values as required, etc. See more in the [docs](http://mongoosejs.com/docs/schematypes.html).
 
 ```
 const Student = mongoose.model('Student', {
