@@ -4,12 +4,11 @@
 
 ### Installation
 
-Install Redis following the directions on their [downloads page](https://redis.io/download). As of writing, directions look like so:
+TOTALLY IGNORE the directions on their [downloads page](https://redis.io/download). 
+
+instead:
 ```
-$ wget http://download.redis.io/releases/redis-3.2.8.tar.gz
-$ tar xzf redis-3.2.8.tar.gz
-$ cd redis-3.2.8
-$ make
+brew install redis
 ```
 You can test the download by running `redis-server` in your terminal. If you see some sweet ascii art of a baby toy, you're on the right track.
 
